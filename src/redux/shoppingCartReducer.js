@@ -1,6 +1,6 @@
 let lastId = 0;
 
-export default function reducer(state = [], action) {
+export default function shoppingCartreducer(state = [], action) {
     switch (action.type) {
         case 'houseAdded':
             return [
@@ -12,7 +12,7 @@ export default function reducer(state = [], action) {
                     resolved: false
                 }
             ];
-        case "houseremoved":
+        case "houseRemoved":
             return state.filter(house => house.id !== action.payload.id);
         default:
             return state;
