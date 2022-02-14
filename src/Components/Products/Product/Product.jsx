@@ -6,23 +6,23 @@ import { ClassNames } from "@emotion/react";
 import useStyles from './styles';
 import Products from "../Products";
 
-const Product = (product, products, productData) => {
+const Product = (product) => {
 
     const classes = useStyles();
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={Products.img} title={products.name} />
+            <CardMedia className={classes.media} image={`${product.imageURL}`} title={product.name} />
             <CardContent>
                 <div className={classes.CardContent}>
                     <Typography variant ="h5" gutterBottom>
-                        {products.name}
+                        {product.name}
                     </Typography>
                     <Typography variant ="h5">
-                        {products.price}
+                        {product.price}
                     </Typography>
                 </div>
-                <Typography variant="h2" color="textSecondary">{products.description}
+                <Typography variant="body2" color="textSecondary">{product.description}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>

@@ -5,10 +5,7 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Products from "./Components/Products/Products";
 import Cart from "./Pages/Cart";
-import NavBar from "./Components/Navbar/NavBar";
-
-
-
+import NavBar from "./Components/Navbar/NavBar"
 
 
 function App() {

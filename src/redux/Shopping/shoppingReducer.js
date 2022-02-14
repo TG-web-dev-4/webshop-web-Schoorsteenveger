@@ -196,7 +196,7 @@ const INITIAL_STATE = {
         }
     ], // id, name, location, img, price, description, rooms, bathrooms, haunted, available, img
     cart: [], // id, name, location, img, price, description, rooms, bathrooms, haunted, available, img, qty
-    currentItem: null
+    currentItem: null,
 }
 
 const shoppingReducer = (state = INITIAL_STATE, action) => {
