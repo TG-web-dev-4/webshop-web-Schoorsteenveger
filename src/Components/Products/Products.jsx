@@ -202,7 +202,7 @@ const Products = ({ product }) => {
   return (
     
     <main>
-      <Typography variant="h3" color="secondary">Maak header 2divs</Typography>
+      <Typography variant="h3" color="secondary">Choose your forever home</Typography>
       <Grid container justify="center" spacing={4}>
         {products.map((product) => (
           <Grid item  xs={12} sm={6} md={4} lg={3}>
