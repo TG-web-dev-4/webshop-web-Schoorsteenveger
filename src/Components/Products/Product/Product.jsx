@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from "@mui/material";
+import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, Button } from "@mui/material";
 import { AddShoppingCart } from '@mui/icons-material';
 import { ClassNames } from "@emotion/react";
 import useStyles from './styles';
@@ -17,8 +17,8 @@ const Product = ({ product }) => {
                     <Typography variant ="h5" gutterBottom color="textSecondary">
                         {product.name}
                     </Typography>
-                    <Typography variant ="h5" color="textSecondary">
-                        {product.price}
+                    <Typography variant ="h5" color="textSecondary">$
+                        { product.price}
                     </Typography>
                 </div>
                 <Typography variant="body2" color="textSecondary">{product.description}
@@ -27,7 +27,8 @@ const Product = ({ product }) => {
             <CardActions disableSpacing className={classes.CardActions}>
                 <IconButton aria-label="Add to Cart">
                     <AddShoppingCart />
-                </IconButton>
+                    <Button size="medium">Learn More</Button>
+                </IconButton>               
             </CardActions>
             
         </Card>
