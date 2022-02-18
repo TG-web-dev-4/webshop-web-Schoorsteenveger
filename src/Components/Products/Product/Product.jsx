@@ -2,23 +2,22 @@ import React from "react";
 import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from "@mui/material";
 import { AddShoppingCart } from '@mui/icons-material';
 import { ClassNames } from "@emotion/react";
-
 import useStyles from './styles';
 import Products from "../Products";
 
-const Product = (product) => {
+const Product = ({ product }) => {
 
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
-            <CardMedia className={classes.media} image={`${product.imageURL}`} title={product.name} />
+        <Card className={classes.root} >
+            <CardMedia className={classes.media} image={`../assets/${product.img}`} title={product.name} color="textSecondary"/>
             <CardContent>
                 <div className={classes.CardContent}>
-                    <Typography variant ="h5" gutterBottom>
+                    <Typography variant ="h5" gutterBottom color="textSecondary">
                         {product.name}
                     </Typography>
-                    <Typography variant ="h5">
+                    <Typography variant ="h5" color="textSecondary">
                         {product.price}
                     </Typography>
                 </div>

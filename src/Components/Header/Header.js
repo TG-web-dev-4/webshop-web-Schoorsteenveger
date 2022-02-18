@@ -4,11 +4,12 @@ import {Typography} from "@mui/material"
 
 function Header() {
   return (
-    <Box sx={{ minHeight: '100vh', background: 'url(./assets/home.jpg)', backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+    <Box xs={6} md={8} sx={{ minHeight: '100vh', background: 'url(./assets/home.jpg)', backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
       <Typography variant="h1" textAlign={"center"}>
       Hoe dan
       </Typography>
     </Box>
+    
   )
 }
 

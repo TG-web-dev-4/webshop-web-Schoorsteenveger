@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import { thunk } from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './rootReducer';
 import { initialState } from "../Data/initialState"
@@ -7,5 +8,6 @@ import { initialState } from "../Data/initialState"
 const store = createStore(
     rootReducer,
     initialState,
-    composeWithDevTools());
+    composeWithDevTools(applyMiddleware()));
+
 export default store;

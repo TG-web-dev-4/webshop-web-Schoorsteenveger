@@ -42,18 +42,18 @@ export const NavBar = () => {
 
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
                                 <Typography variant="h6" color="inherit">
-                                    <img src={`../assets/castle_logo.png`} alt="Stoker Real Estate" height="150vh" />
+                                    <img style={{ textDecoration: 'none' }} src={`../assets/castle_logo.png`} alt="Stoker Real Estate" height="150vh" />
                                 </Typography>
                                 <Typography variant='h4'>Stoker Real Estate</Typography>
                             </Box>
 
                             {/*Links*/}
                             {matches ? (<DrawerComponent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />) : (<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                <Typography variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Home</Typography>
+                                <Typography component={Link} to="/Home" style={{ textDecoration: 'none' }} variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Home</Typography>
                                 <Typography variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}
                                     aria-controls='basic-menu'
-                                    aria-aria-haspopup='true'
-                                    aria-aria-expanded={openMenu ? 'true' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={openMenu ? 'true' : undefined}
                                     onClick={handleClick}
 
                                 >Our properties</Typography>
@@ -61,14 +61,17 @@ export const NavBar = () => {
                                     anchorEl={anchorEl}
                                     open={openMenu}
                                     onClose={handleClose}
+
                                 >
-                                    <MenuItem onClick={handleClose}>Rent
+                                    <MenuItem component={Link} to="/Products" onClick={() => handleClose}>All
                                     </MenuItem>
-                                    <MenuItem onClick={handleClose}>Buy
+                                    <MenuItem component={Link} to="/Rent" onClick={() => handleClose}>Rent
+                                    </MenuItem>
+                                    <MenuItem component={Link} to="/Buy" onClick={() => handleClose}>Buy
                                     </MenuItem>
                                 </Menu>
-                                <Typography variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>About us</Typography>
-                                <Typography variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Contact</Typography>
+                                <Typography to="/AboutUs" variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>About us</Typography>
+                                <Typography to="/Contact" variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Contact</Typography>
                             </Box>)}
 
                         </Box>
