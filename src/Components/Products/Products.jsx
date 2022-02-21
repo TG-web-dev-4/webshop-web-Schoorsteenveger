@@ -6,9 +6,10 @@ import Product from './Product/Product';
 import products from '../../Data/productData';
 
 const Products = () => {
+  
   return (
     
-    <main>
+     <main>
       <Typography variant="h3" color="secondary">Choose your forever home</Typography>
       <Grid container justify="center" spacing={4}>
         {products.map(product => (

@@ -5,12 +5,13 @@ import { ClassNames } from "@emotion/react";
 import useStyles from './styles';
 import Products from "../Products";
 
+
 const Product = ({ product }) => {
 
     const classes = useStyles();
 
     return (
-        <Card className={classes.root} >
+        <Card className={classes.root} key={product.id}>
             <CardMedia className={classes.media} image={`../assets/${product.img}`} title={product.name} color="textSecondary"/>
             <CardContent>
                 <div className={classes.CardContent}>
@@ -27,7 +28,7 @@ const Product = ({ product }) => {
             <CardActions disableSpacing className={classes.CardActions}>
                 <IconButton aria-label="Add to Cart">
                     <AddShoppingCart />
-                    <Button size="medium">Learn More</Button>
+                    <Button to={`/products/${product.id}`} size="medium">Learn More</Button>
                 </IconButton>               
             </CardActions>
             

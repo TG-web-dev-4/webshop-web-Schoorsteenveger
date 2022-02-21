@@ -4,13 +4,6 @@ import { Typography, Grid, Box, Paper, Container } from '@mui/material';
 import { margin } from '@mui/system';
 
 
-// const Item = styled(Paper)(({ theme }) => ({
-//   ...theme.typography.body2,
-//   padding: theme.spacing(2),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
-
 function Header() {
 
   return (
@@ -22,7 +15,7 @@ function Header() {
         <Container maxWidth='md'>
           <Grid container spacing={2}>
             <Grid item sx={{ heigth: '100%', bgcolor: 'white', padding: '40px 20px' }}>
-              <Typography variant="h3" textAlign={"left"} sx={{mb:4}}>
+              <Typography variant="h3" textAlign={"left"} sx={{ mb: 4 }}>
                 Buying made simple
               </Typography>
               <Typography variant="p" textAlign={"left"}>
@@ -30,7 +23,7 @@ function Header() {
                 We can talk you through the buying process and get your documentation and finances ready.
                 Perfect for first-time buyers.
               </Typography>
-              <Typography variant='h6' sx={{ mt:8}}>Search for a Home</Typography>
+              <Typography variant='h6' sx={{ mt: 8 }}>Search for a Home</Typography>
             </Grid>
 
           </Grid>
