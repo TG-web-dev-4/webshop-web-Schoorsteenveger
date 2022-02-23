@@ -1,30 +1,33 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { Grid } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import { connect } from 'react-redux';
 import Product from './Product/Product'; 
 import products from '../../Data/productData';
 
-const Products = () => {
+const Products = (product) => {
+
+  console.log('*PRODUCT', product.id)
   
   return (
     
-     <main>
-      <Typography variant="h3" color="secondary">Choose your forever home</Typography>
+     <Grid sx={{justifyContent: "center"}} container spacing={1} p={4}>
+      <Typography variant="h3" color="secondary" m={5}>Choose your forever home</Typography>
       <Grid container justify="center" spacing={4}>
         {products.map(product => (
-          <Grid item  xs={12} sm={6} md={6} lg={3}>
-            <Product key={product.id} product={product} />
+          <Grid item key={product.id}  xs={12} sm={6} md={6} lg={3}>
+            <Product product={product} />
+             
           </Grid>
         ))}
-
       </Grid>
       
-    </main>
+    </Grid>
   )
 };
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     products: state.shop.products,
   }

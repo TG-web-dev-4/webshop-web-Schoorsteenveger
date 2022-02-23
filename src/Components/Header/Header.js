@@ -14,7 +14,7 @@ function Header() {
       }}>
         <Container maxWidth='md'>
           <Grid container spacing={2}>
-            <Grid item sx={{ heigth: '100%', bgcolor: 'white', padding: '40px 20px' }}>
+            <Grid item sx={{ heigth: '100%', bgcolor: 'white', p: '40px 30px', m: '20px auto'}}>
               <Typography variant="h3" textAlign={"left"} sx={{ mb: 4 }}>
                 Buying made simple
               </Typography>

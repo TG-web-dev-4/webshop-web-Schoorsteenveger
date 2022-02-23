@@ -7,12 +7,13 @@ import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
 import Products from "./Components/Products/Products";
 import Product from "./Components/Products/Products";
-import Cart from "./Pages/Cart";
+import Cart from "./Components/Cart/Cart";
 import NavBar from "./Components/Navbar/NavBar"
 import DrawerComponent from "./Components/Navbar/DrawerComponent";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import Layout from "./Components/Layout";
+import ProductDetail from './Components/Products/Product/ProductDetail'
 
 
 const theme = createTheme({
@@ -41,8 +42,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Abouts" element={<AboutUs />} />
-              <Route path="/Products" element={<Products />} />
-              <Route path="/Products/:id" component={Product}/>
+              <Route path="/Products" element={<Products />}/>
+              <Route path="/Products/:id" element={<ProductDetail />} />
               <Route path="/Cart" element={<Cart />} />
               <Route path="/Contact" element={<Contact />} />
             </Routes>
