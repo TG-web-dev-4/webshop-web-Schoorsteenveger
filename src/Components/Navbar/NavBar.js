@@ -18,7 +18,7 @@ export const NavBar = () => {
     const [openDrawer, setOpenDrawer] = useState(true);
 
     const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('md'));
+    const matches = useMediaQuery(theme.breakpoints.down('lg'));
 
     const openMenu = Boolean(anchorEl);
     const handleClick = (e) => {
@@ -72,13 +72,17 @@ export const NavBar = () => {
                                 </Menu>
                                 <Typography to="/AboutUs" variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>About us</Typography>
                                 <Typography to="/Contact" variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Contact</Typography>
+
+                                <Box>
+                                    <Button variant='contained' sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Login</Button>
+                                </Box>
                             </Box>)}
 
+                            
+
                         </Box>
 
-                        <Box>
-                            <Button variant='contained' sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Login</Button>
-                        </Box>
+                        
 
                         {matches ? (
                             <IconButton onClick={() => setOpenDrawer(true)} >
@@ -89,9 +93,10 @@ export const NavBar = () => {
 
                             <IconButton aria-label='Show cart items' color="inherit">
                                 <Badge badgeContent={2} color="secondary">
-                                    <ShoppingCart />
+                                        <ShoppingCart />
                                 </Badge>
                             </IconButton>
+                            
 
                         )}
 

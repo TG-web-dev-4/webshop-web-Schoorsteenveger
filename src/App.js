@@ -7,7 +7,7 @@ import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
 import Products from "./Components/Products/Products";
 import Product from "./Components/Products/Products";
-import Cart from "./Components/Cart/Cart";
+import Cart from "./Components/Cart/CartItem";
 import NavBar from "./Components/Navbar/NavBar"
 import DrawerComponent from "./Components/Navbar/DrawerComponent";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -38,9 +38,9 @@ function App() {
           <Layout>
             <DrawerComponent />
             <NavBar />
-            <Header />
+            {/* <Header /> */}
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/Home" element={<Home />} />
               <Route path="/Abouts" element={<AboutUs />} />
               <Route path="/Products" element={<Products />}/>
               <Route path="/Products/:id" element={<ProductDetail />} />

@@ -8,28 +8,31 @@ import { AddShoppingCart, DeleteOutlineOutlined, LocalHotelRounded, BathtubRound
 import { Grid, Typography, IconButton, Button, CardMedia, Avatar, AvatarGroup } from "@mui/material";
 
 
+
 const useStyles = makeStyles((theme) => ({
     avatar: {
         backgroundColor: theme.palette.grey[50],
         color: theme.palette.main
     },
-    media: {
-        height: 0,
-        paddingTop: '56.25%',
-    },
+    card: {
+        height: 194,
+        width: 400,
+    }
 }))
 
-function ProductDetail() {
+
+function ProductDetail({product}) {
 
     const classes = useStyles();
     const [cartBtn, setCartBtn] = useState('Add to Cart')
     const params = useParams()
-    const { id, img, description, name } = params;
+    const { id } = params;
 
-    console.log('USEPARAMS', useParams())
-    console.log("PARAMS", params)
+    // console.log('USEPARAMS', useParams())
+    // console.log("PARAMS", params)
 
     const productId = parseInt(params.id)
+
 
     // const productDetail = products.filter(product => {
     //     console.log("products", product)
@@ -42,24 +45,26 @@ function ProductDetail() {
     // })
 
     const productDetail = products.filter(product => product.id === productId) // if (product.id === productId) return true
+    // console.log('productDetail => filtereded array', productDetail)
+    // console.log("Product2", products[0])
 
-    console.log('productDetail => filtereded array', productDetail)
-
-    console.log("Product2", products[0])
-
-
-
+    const configAddToCardBtn = {
+        type: 'button'
+    }
+    console.log(productDetail[0].img)
     return (
         <>
-            <Box maxWidth={'fit-content'} m={'0 auto'} xs={12} sm={6} md={6} lg={6} p={6}>
-                <Grid container spacing={2} bgcolor='orange'>
-                    <CardMedia className={classes.media} image={`require(../assets/${products[0].img})`}></CardMedia>
-                    <CardMedia className={classes.media} image={`../assets/${products[0].img}`}></CardMedia>
-                    <Grid image={`../assets/${productDetail.img}`} item xs={12} md={6}>
-                        <img src={productDetail[0].img} alt={productDetail[0].name} />
+            <Box maxWidth={'80vw'} m={'0 auto'} xs={12} sm={6} md={6} lg={8} p={6} >
+                <Grid container spacing={1} bgcolor='orange' sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                    {/* <CardMedia component='img' className={classes.media} image={`../assets/${productDetail[0].img}`} title={products[0].name} color="textSecondary" />     */}
+                    {/* <CardMedia className={classes.media} image={`../assets/${productDetail[0].img}`} alt={productDetail[0].name}></CardMedia> */}
+                    <Grid item xs={12} xs={12} sm={6} md={6} lg={6}>
+                        <img width={'100%'} height={'auto'} src={`../assets/${productDetail[0].img}`} alt={productDetail[0].name} />
                     </Grid>
 
-                    <Grid item xs={12} md={6} bgcolor='#f7f7f5' padding={5}>
+
+
+                    <Grid item xs={12} sm={6} md={6} lg={6} bgcolor='#f7f7f5'>
                         <Typography variant="h4" gutterBottom color="textSecondary">
                             {productDetail[0].name}
                         </Typography>
@@ -72,7 +77,7 @@ function ProductDetail() {
                         <Typography variant="body2" color="textSecondary">{productDetail[0].description}
                         </Typography>
 
-                        <Grid item padding={4} sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', backgroundColor: "yellow" }}>
+                        <Grid item padding={3} sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                             <Avatar className={classes.avatar}>
                                 <LocalHotelRounded />
                             </Avatar>
@@ -85,13 +90,21 @@ function ProductDetail() {
                         </Grid>
 
                         <Grid item padding={4} sx={{ display: 'flex', justifyContent: 'center', backgroundColor: "pink", textAlign: 'left' }}>
-                            <AddShoppingCart />Add to Cart
-                            {/* <DeleteOutlineOutlined /> */}
+                            <AddShoppingCart {...configAddToCardBtn} />Add to Cart
+
                         </Grid>
+
+                        
 
                     </Grid>
                 </Grid>
+
+                
+                
             </Box>
+            {/* <Grid maxWidth={'fit-content'} m={'0 auto'} xs={12} sm={6} md={6} lg={6} p={6}>
+                <WovenImageList product={product} />
+            </Grid> */}
         </>
     )
 }
