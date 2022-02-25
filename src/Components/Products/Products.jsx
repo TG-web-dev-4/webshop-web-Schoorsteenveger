@@ -14,9 +14,9 @@ const Products = (product) => {
      <Grid sx={{justifyContent: "center"}} container spacing={1} p={4}>
       <Typography variant="h3" color="secondary" m={5}>Choose your forever home</Typography>
       <Grid container justify="center" spacing={4}>
-        {products.map(product => (
+        {products.map(products => (
           <Grid item key={product.id}  xs={12} sm={6} md={6} lg={3}>
-            <Product product={product} />
+            <Product key={products.id}  product={products}  />
              
           </Grid>
         ))}

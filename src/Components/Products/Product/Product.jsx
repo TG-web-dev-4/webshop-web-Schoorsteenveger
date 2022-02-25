@@ -5,9 +5,11 @@ import { AddShoppingCart } from '@mui/icons-material';
 import { ClassNames } from "@emotion/react";
 import useStyles from './styles';
 import Products from "../Products";
+import { connect } from "react-redux";
+import { addToCart } from '../../../redux/Shopping/shoppingActions';
 
 
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
 
     const classes = useStyles();
     console.log('PRODUCT', product.id)
@@ -29,13 +31,20 @@ const Product = ({ product }) => {
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>
                 <Button component={Link} to={`/products/${product.id}`}>Read more</Button>  
-                <IconButton aria-label="Add to Cart">
-                    <AddShoppingCart />                 
-                </IconButton>               
+                <IconButton onClick={() => addToCart(product.id)} aria-label="Add to Cart">
+                    <AddShoppingCart />                    
+                </IconButton>    
+                
             </CardActions>
             
         </Card>
     ) 
 } 
 
-export default Product
+const mapDispatchToProps = dispatch => {
+    return {
+        addToCart: (id) => dispatch(addToCart(id)),
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Product)
