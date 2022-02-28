@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography, Button } from '@mui/material';
@@ -12,10 +12,21 @@ import { useMediaQuery } from '@mui/material';
 // import useStyles from './styles';
 
 
-export const NavBar = () => {
+export const NavBar = ({ cart }) => {
+
+    // const [cartCount, setCartCount] = useState(0)
+
+    // useEffect(() => {
+    //     let count = 0;
+    //     cart.forEach((item) => {
+    //         count += item.qty;
+    //     });
+
+    //     setCartCount(count);
+    // }, [cart, cartCount]);
 
     const [anchorEl, setAnchorEl] = useState(null);
-    const [openDrawer, setOpenDrawer] = useState(true);
+    const [openDrawer, setOpenDrawer] = useState(false);
 
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('lg'));
@@ -41,7 +52,7 @@ export const NavBar = () => {
                         <Box sx={{ display: "flex", justifyContent: "space-between", alignContent: "center", alignItems: "center", width: "100%", padding: "20px 0" }} component="div">
 
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-                                <Typography variant="h6" color="inherit">
+                                <Typography component={Link} to="/" variant="h6" color="inherit">
                                     <img style={{ textDecoration: 'none' }} src={`../assets/castle_logo.png`} alt="Stoker Real Estate" height="150vh" />
                                 </Typography>
                                 <Typography variant='h4'>Stoker Real Estate</Typography>
@@ -49,7 +60,8 @@ export const NavBar = () => {
 
                             {/*Links*/}
                             {matches ? (<DrawerComponent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />) : (<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                <Typography component={Link} to="/Home" style={{ textDecoration: 'none' }} variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Home</Typography>
+
+                                <Typography component={Link} to="/" style={{ textDecoration: 'none' }} variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Home</Typography>
                                 <Typography variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}
                                     aria-controls='basic-menu'
                                     aria-haspopup="true"
@@ -78,11 +90,11 @@ export const NavBar = () => {
                                 </Box>
                             </Box>)}
 
-                            
+
 
                         </Box>
 
-                        
+
 
                         {matches ? (
                             <IconButton onClick={() => setOpenDrawer(true)} >
@@ -91,12 +103,12 @@ export const NavBar = () => {
 
                         ) : (
 
-                            <IconButton aria-label='Show cart items' color="inherit">
+                            <IconButton component={Link} to="/Cart" aria-label='Show cart items' color="inherit">
                                 <Badge badgeContent={2} color="secondary">
-                                        <ShoppingCart />
+                                    <ShoppingCart />
                                 </Badge>
                             </IconButton>
-                            
+
 
                         )}
 
@@ -108,8 +120,10 @@ export const NavBar = () => {
     )
 };
 
-const mapStateToProps = (state) => ({ NavBar });
+const mapStateToProps = state => {
+    return {
+        cart: state.shop.cart
+    }
+};
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default connect(mapStateToProps)(NavBar);

@@ -5,17 +5,18 @@ import { AddShoppingCart } from '@mui/icons-material';
 import { ClassNames } from "@emotion/react";
 import useStyles from './styles';
 import Products from "../Products";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { addToCart } from '../../../redux/Shopping/shoppingActions';
 
 
-const Product = ({ product, addToCart }) => {
+const Product = ({ product }) => {
+    const dispatch = useDispatch()
 
     const classes = useStyles();
-    console.log('PRODUCT', product.id)
+    // console.log('PRODUCTID?', product.id)
 
     return (
-        <Card className={classes.root} key={product.id}>
+        <Card className={classes.root}>
             <CardMedia className={classes.media} image={`../assets/${product.img}`} title={product.name} color="textSecondary"/>
             <CardContent>
                 <div className={classes.CardContent}>
@@ -31,7 +32,7 @@ const Product = ({ product, addToCart }) => {
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>
                 <Button component={Link} to={`/products/${product.id}`}>Read more</Button>  
-                <IconButton onClick={() => addToCart(product.id)} aria-label="Add to Cart">
+                <IconButton onClick={() => dispatch(addToCart(product.id))} aria-label="Add to Cart">
                     <AddShoppingCart />                    
                 </IconButton>    
                 
@@ -41,10 +42,12 @@ const Product = ({ product, addToCart }) => {
     ) 
 } 
 
-const mapDispatchToProps = dispatch => {
+/* const mapDispatchToProps = dispatch => {
     return {
         addToCart: (id) => dispatch(addToCart(id)),
+        
     }
-}
+    
+} */
 
-export default connect(null, mapDispatchToProps)(Product)
+export default Product

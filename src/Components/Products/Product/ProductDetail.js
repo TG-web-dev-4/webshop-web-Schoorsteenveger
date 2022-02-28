@@ -6,6 +6,8 @@ import { makeStyles } from '@mui/styles';
 import products from '../../../Data/productData';
 import { AddShoppingCart, DeleteOutlineOutlined, LocalHotelRounded, BathtubRounded } from '@mui/icons-material';
 import { Grid, Typography, IconButton, Button, Card, CardContent, CardMedia, CardActionArea, Avatar, AvatarGroup, CardActions, Container } from "@mui/material";
+import { useDispatch } from 'react-redux';
+import { addToCart, removeFrom } from '../../../redux/Shopping/shoppingActions';
 
 
 
@@ -26,7 +28,7 @@ function ProductDetail({ product }) {
     const classes = useStyles();
     const [cartBtn, setCartBtn] = useState('Add to Cart')
     const params = useParams()
-    const { id } = params;
+    // const { id } = params;
 
     // console.log('USEPARAMS', useParams())
     // console.log("PARAMS", params)
@@ -89,7 +91,7 @@ function ProductDetail({ product }) {
                             </Box>
                             <CardActions>
                                 <Box sx={{ display: 'flex', pl: 1, pb: 2 }}>
-                                    <AddShoppingCart {...configAddToCardBtn} />Add to Cart
+                                    <AddShoppingCart onClick={() => addToCart(product.id)} {...configAddToCardBtn} />Add to Cart
                                 </Box>
                             </CardActions>
                         </Box>

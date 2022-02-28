@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import CartItem from './CartItem';
+import CartItem from './CartItem'
 
 const CartList = () => {
     const cartItems = useSelector((state) => state.shop.cartItems);
@@ -13,7 +13,7 @@ const CartList = () => {
     };
     return (
         <>
-            <div>cart items</div>
+            <div>Cart items</div>
             {showCartItems()}
         </>
     );

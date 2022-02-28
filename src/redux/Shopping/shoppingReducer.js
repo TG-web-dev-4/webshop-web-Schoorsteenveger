@@ -1,33 +1,55 @@
 import * as actionTypes from './shoppingTypes';
-import { initialState } from '../../Data/initialState';
+import products from '../../Data/productData'
+
+export const initialState = {
+
+    products: [...products],
+    cartItems: [],
+    currentItem: null,
+}
+
+console.log('PRODUCTS INSIDE SHOP REDUCER', initialState)
 
 const shopReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
+            console.log('CURRENT STATE', state)
+            console.log(`INSIDE ADD_TO_CART`, action.payload)
+            const { id } = action.payload
+            console.log("ID IN PAYLOAD", id)
+
             const cartItem = state.products.find(
-                (product) => product.id === action.payload.id
-            );
-            const inCart = state.cart.find((cartItem) =>
-                cartItem.id === action.payload.id ? true : false
+                (product) => product.id === id
+
             );
 
+            console.log('CARTITEM, ', cartItem)
+            const inCart = state.products.find((cartItem) =>
+                cartItem.id === action.payload.id
+            );
+            // console.log("state productid", product.id)
+
+            console.log("INCART", inCart)
+
+
+            const itemsAddToCart = state.cartItems.map((cartItem) =>
+                cartItem.id === action.payload.id ? { ...cartItem, qty: cartItem.qty + 1 } : { ...cartItem, qty: 1 })
+            console.log("Itemstocartitems", itemsAddToCart)
             return {
                 ...state,
-                cart: inCart ?
-                    state.cart.map((cartItem) =>
-                        cartItem.id === action.payload.id ? { ...cartItem, qty: cartItem.qty + 1 } : cartItem
-                    )
-                    : [...state.cart, { ...cartItem, qty: 1 }],
-            };
+                cartItems: [...itemsAddToCart]
+
+            }
+
         case actionTypes.REMOVE_FROM_CART:
             return {
                 ...state,
-                cart: state.cart.filter((cartItem) => cartItem.id !== action.payload),
+                cartItems: state.cartItems.filter((cartItem) => cartItem.id !== action.payload),
             };
         case actionTypes.ADJUST_QTY:
             return {
                 ...state,
-                cart: state.cart.map((cartItem) =>
+                cartItems: state.cartItems.map((cartItem) =>
                     cartItem.id === action.payload.id ? { ...cartItem, qty: +action.payload.qty }
                         : cartItem
                 ),

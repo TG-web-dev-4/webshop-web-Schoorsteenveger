@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Components/Header/Header';
 import { Image } from '@mui/icons-material';
 import { Box, Grid, Typography } from '@mui/material';
@@ -15,15 +16,15 @@ function Home({ product }) {
     return (
         <>
             <Header />
-            <Box sx={{ display: 'flex', justifyContent: "center", alignContent: "center",alignItems: 'center' }} container p={5}>
+            <Box sx={{ display: 'flex', justifyContent: "center", alignContent: "center", alignItems: 'center' }} container p={5}>
                 {/* <Banner purpose={'For Sale'} /> */}
-                
+
                 <Grid >
                     <WovenImageList product={product} />
                 </Grid>
             </Box>
         </>
-        
+
     )
 }
 

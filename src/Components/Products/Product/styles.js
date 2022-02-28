@@ -1,8 +1,10 @@
+import { autocompleteClasses } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
     root: {
-        maxWidth: '100%',
+        maxWidth: '90%',
+        margin:' 0 auto',
     },
     media: {
         height: 0,

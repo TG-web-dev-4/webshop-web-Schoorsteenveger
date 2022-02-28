@@ -4,7 +4,7 @@ const products = [
         "id": 1,
         "name": "The Whaley House",
         "location": "San Diego",
-        "img": ["Waley_House.jpeg"], 
+        "img": ["Waley_House.jpeg"],
         "price": 1500000,
         "description": "Back in 1852, James Yankee Jim Robinson was hung by his neck for the crime of grand larceny. A few years later, Thomas and Anna Whaley built a house on the spot where Robinson died, and soon enough, Yankee Jim's ghost showed up, haunting the site. It's said that his footsteps can be heard clumping around the house.",
         "Rooms": 5,
@@ -195,3 +195,4 @@ const products = [
 ]
 
 export default products
+

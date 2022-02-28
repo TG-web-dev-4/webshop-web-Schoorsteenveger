@@ -1,13 +1,30 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItem, {
+    imageListItemClasses
+} from "@mui/material/ImageListItem";
+import { createTheme } from '@mui/material';
+// import ImageListItem from '@mui/material/ImageListItem';
 import { Box, Grid, Typography } from '@mui/material';
 import products from '../../Data/productData';
 
 export default function WovenImageList() {
+    ;
     return (
-        <Box>
-            <ImageList sx={{ width: '80vw', alignContent: 'center'}} variant="woven" cols={3} gap={45}>
+        <Box sx={{
+            display: 'grid', gridTemplateColumns: {
+                mobile: "repeat(1, 1fr)",
+                bigMobile: "repeat(2, 1fr)",
+                tablet: "repeat(3, 1fr)",
+                desktop: "repeat(4, 1fr)"
+            },
+            [`& .${imageListItemClasses.root}`]: {
+                display: "flex",
+                flexDirection: "column"
+            }
+        }}
+        >
+            <ImageList sx={{ width: '80vw', alignContent: 'center' }} variant="woven" cols={3} gap={45}>
                 {products.map((product) => (
                     <ImageListItem key={product.img}>
                         <img
@@ -20,7 +37,7 @@ export default function WovenImageList() {
                 ))}
             </ImageList>
         </Box>
-        
+
     );
 }
 
