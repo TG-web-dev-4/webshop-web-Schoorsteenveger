@@ -1,53 +1,60 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, Button } from "@mui/material";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Typography,
+  IconButton,
+  Button,
+} from '@mui/material';
 import { AddShoppingCart } from '@mui/icons-material';
-import { ClassNames } from "@emotion/react";
+import { ClassNames } from '@emotion/react';
 import useStyles from './styles';
-import Products from "../Products";
-import { connect, useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../../redux/Shopping/shoppingActions';
 
+const Product = (props) => {
+  // console.log('PROPS INSIDE PRODUCT', props);
+  const dispatch = useDispatch();
 
-const Product = ({ product }) => {
-    const dispatch = useDispatch()
+  const classes = useStyles();
 
-    const classes = useStyles();
-    // console.log('PRODUCTID?', product.id)
+  return (
+    <Card className={classes.root}>
+      <CardMedia
+        className={classes.media}
+        image={`../assets/${props.img}`}
+        title={props?.name}
+        color='textSecondary'
+      />
+      <CardContent>
+        <div className={classes.CardContent}>
+          <Typography variant='h5' gutterBottom color='textSecondary'>
+            {props.name}
+          </Typography>
+          <Typography variant='h5' color='textSecondary'>
+            ${props.price}
+          </Typography>
+        </div>
+        <Typography variant='body2' color='textSecondary'>
+          {props.description}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing className={classes.CardActions}>
+        <Button component={Link} to={`/products/${props.id}`}>
+          Read more
+        </Button>
+        <IconButton
+          onClick={() => dispatch(addToCart(props.id))}
+          aria-label='Add to Cart'>
+          <AddShoppingCart />
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
+};
 
-    return (
-        <Card className={classes.root}>
-            <CardMedia className={classes.media} image={`../assets/${product.img}`} title={product.name} color="textSecondary"/>
-            <CardContent>
-                <div className={classes.CardContent}>
-                    <Typography variant ="h5" gutterBottom color="textSecondary">
-                        {product.name}
-                    </Typography>
-                    <Typography variant ="h5" color="textSecondary">$
-                        {product.price}
-                    </Typography>
-                </div>
-                <Typography variant="body2" color="textSecondary">{product.description}
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing className={classes.CardActions}>
-                <Button component={Link} to={`/products/${product.id}`}>Read more</Button>  
-                <IconButton onClick={() => dispatch(addToCart(product.id))} aria-label="Add to Cart">
-                    <AddShoppingCart />                    
-                </IconButton>    
-                
-            </CardActions>
-            
-        </Card>
-    ) 
-} 
-
-/* const mapDispatchToProps = dispatch => {
-    return {
-        addToCart: (id) => dispatch(addToCart(id)),
-        
-    }
-    
-} */
-
-export default Product
+export default Product;
