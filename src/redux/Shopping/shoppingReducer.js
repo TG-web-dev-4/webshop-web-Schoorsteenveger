@@ -1,59 +1,69 @@
 import * as actionTypes from './shoppingTypes';
-import products from '../../Data/productData'
+import { initialState } from '../../Data/initialState';
 
-export const initialState = {
-
-    products: [...products],
-    cartItems: [],
-    currentItem: null,
-}
-
-console.log('PRODUCTS INSIDE SHOP REDUCER', initialState)
-
-const shopReducer = (state = initialState, action) => {
+const shopReducer = (state = initialState.shop, action) => {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
-            console.log('CURRENT STATE', state)
-            console.log(`INSIDE ADD_TO_CART`, action.payload)
             const { id } = action.payload
-            console.log("ID IN PAYLOAD", id)
 
             const cartItem = state.products.find(
                 (product) => product.id === id
-
             );
 
-            console.log('CARTITEM, ', cartItem)
-            const inCart = state.products.find((cartItem) =>
+            // console.log(cartItem)
+
+            const isInCart = state.cartItems.find((cartItem) =>
                 cartItem.id === action.payload.id
             );
-            // console.log("state productid", product.id)
 
-            console.log("INCART", inCart)
+            //console.log("InCart19",cartItem)
 
+            if (isInCart) {
+                const itemsAddToCart = state.cartItems.map((cartItem) =>
+                    cartItem.id === action.payload.id ? { ...cartItem, qty: cartItem.qty + 1 } : cartItem)
 
-            const itemsAddToCart = state.cartItems.map((cartItem) =>
-                cartItem.id === action.payload.id ? { ...cartItem, qty: cartItem.qty + 1 } : { ...cartItem, qty: 1 })
-            console.log("Itemstocartitems", itemsAddToCart)
+                return {
+                    ...state,
+                    cartItems: itemsAddToCart
+                }
+            }
+            // console.log("cartItems", state)
             return {
                 ...state,
-                cartItems: [...itemsAddToCart]
-
+                cartItems: [
+                    ...state.cartItems,
+                    { ...cartItem, qty: 1 }
+                ]
             }
+
+
 
         case actionTypes.REMOVE_FROM_CART:
             return {
                 ...state,
                 cartItems: state.cartItems.filter((cartItem) => cartItem.id !== action.payload),
             };
-        case actionTypes.ADJUST_QTY:
+
+        case actionTypes.DECREASE_QUANTITY:
             return {
                 ...state,
                 cartItems: state.cartItems.map((cartItem) =>
-                    cartItem.id === action.payload.id ? { ...cartItem, qty: +action.payload.qty }
+                    cartItem.id === action.payload.id ? { ...cartItem, qty: action.payload.qty - 1 }
                         : cartItem
                 ),
             }
+
+
+        case actionTypes.INCREASE_QUANTITY:
+            return {
+                ...state,
+                cartItems: state.cartItems.map((cartItem) =>
+                    cartItem.id === action.payload.id ? { ...cartItem, qty: action.payload.qty + 1 }
+                        : cartItem
+                ),
+            }
+  
+
         case actionTypes.LOAD_CURRENT_ITEM:
             return {
                 ...state,

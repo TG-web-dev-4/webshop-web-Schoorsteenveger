@@ -18,9 +18,19 @@ export const removeFromCart = (itemID) => {
     }
 }
 
-export const adjustQty = (itemID, value) => {
+export const increaseQTY = (itemID, value) => {
     return {
-        type: actionTypes.ADJUST_QTY,
+        type: actionTypes.INCREASE_QUANTITY,
+        payload: {
+            id: itemID,
+            qty: value
+        }
+    }
+}
+
+export const decreaseQTY = (itemID, value) => {
+    return {
+        type: actionTypes.DECREASE_QUANTITY,
         payload: {
             id: itemID,
             qty: value
@@ -31,7 +41,7 @@ export const adjustQty = (itemID, value) => {
 export const loadCurrentItem = (id) => {
     return {
         type: actionTypes.LOAD_CURRENT_ITEM,
-        payload: id,           
-        
+        payload: id,
+
     }
 }

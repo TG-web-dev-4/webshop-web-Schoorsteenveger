@@ -4,7 +4,7 @@ import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, Butt
 import { AddShoppingCart } from '@mui/icons-material';
 import { ClassNames } from "@emotion/react";
 import useStyles from './styles';
-import Products from "../Products";
+import Products from "../ProductList";
 import { connect, useDispatch } from "react-redux";
 import { addToCart } from '../../../redux/Shopping/shoppingActions';
 

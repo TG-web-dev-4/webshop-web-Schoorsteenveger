@@ -6,9 +6,8 @@ import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
 import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
-import Products from "./Components/Products/Products";
-import Product from "./Components/Products/Products";
-import Cart from "./Components/Cart/CartItem";
+import ProductList from "./Components/Products/ProductList";
+import Cart from "./Pages/Cart";
 import NavBar from "./Components/Navbar/NavBar"
 import DrawerComponent from "./Components/Navbar/DrawerComponent";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -51,7 +50,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Abouts" element={<AboutUs />} />
-              <Route path="/Products" element={<Products />}/>
+              <Route path="/Products" element={<ProductList />} />
               <Route path="/Products/:id" element={<ProductDetail />} />
               <Route path="/Cart" element={<Cart />} />
               {/* <Route exact path="/" component={Login} /> */}

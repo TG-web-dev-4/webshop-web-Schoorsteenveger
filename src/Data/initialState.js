@@ -1,10 +1,8 @@
-
-
-const products = require('../Data/productData')
+import products from './productData'
 
 export const initialState = {
     shop: {
-        products: products.products,
+        products: products,
         cartItems: [],
         currentItem: null,
     },
