@@ -15,14 +15,12 @@ const shopReducer = (state = initialState, action) => {
     case actionTypes.ADD_TO_CART:
       console.log('CURRENT STATE', state);
       console.log(`INSIDE ADD_TO_CART`, action.payload);
-      const { id } = action.payload;
+      const { id, qty } = action.payload;
       console.log('ID IN PAYLOAD', id);
 
       const newCartItem = state.products.find((item) => item.id === id);
 
       const itemExists = state.cartItems.find((item) => item.id === id);
-
-      console.log(itemExists);
 
       if (itemExists) {
         return {
@@ -38,17 +36,15 @@ const shopReducer = (state = initialState, action) => {
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
-        cartItems: state.cartItems.filter(
-          (cartItem) => cartItem.id !== action.payload
-        ),
+        cartItems: state.cartItems.filter((cartItem) => cartItem.id !== id),
       };
     case actionTypes.ADJUST_QTY:
       return {
         ...state,
         cartItems: state.cartItems.map((cartItem) =>
-          cartItem.id === action.payload.id
-            ? { ...cartItem, qty: +action.payload.qty }
-            : cartItem
+          cartItem.id === id
+            ? { ...cartItem, qty: cartItem.qty + qty }
+            : { ...cartItem }
         ),
       };
     case actionTypes.LOAD_CURRENT_ITEM:
