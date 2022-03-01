@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography, Button } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
@@ -9,21 +9,30 @@ import { useTheme } from '@mui/material/styles';
 import { initialState } from '../../Data/initialState';
 import DrawerComponent from './DrawerComponent';
 import { useMediaQuery } from '@mui/material';
+import TablePaginationActions from '@mui/material/TablePagination/TablePaginationActions';
 // import useStyles from './styles';
 
 
-export const NavBar = ({ cart }) => {
+export const NavBar = () => {
+
+    const selectedCartItems = useSelector((state) => state.shop.cartItems);
+    console.log("selected cartitems 18", selectedCartItems)
+
+    const totalItemsWithReduce = selectedCartItems.reduce((acc, curr) => acc + curr.qty, 0)
+    console.log("TOTAL ITEMS", totalItemsWithReduce)
+
+    
+
+    // let totalItemsWithForEach = 0
+    // selectedCartItems.forEach(item => totalItemsWithForEach += item.qty)
+    // console.log('TOTAL WITH FOR EACH', totalItemsWithForEach)
+
+
+    // console.log("cartitems 19", cartItems)
+
 
     // const [cartCount, setCartCount] = useState(0)
 
-    // useEffect(() => {
-    //     let count = 0;
-    //     cart.forEach((item) => {
-    //         count += item.qty;
-    //     });
-
-    //     setCartCount(count);
-    // }, [cart, cartCount]);
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [openDrawer, setOpenDrawer] = useState(false);
@@ -104,7 +113,7 @@ export const NavBar = ({ cart }) => {
                         ) : (
 
                             <IconButton component={Link} to="/Cart" aria-label='Show cart items' color="inherit">
-                                <Badge badgeContent={2} color="secondary">
+                                    <Badge badgeContent={totalItemsWithReduce <= 0 ? 0 : totalItemsWithReduce} color="secondary">
                                     <ShoppingCart />
                                 </Badge>
                             </IconButton>
@@ -120,10 +129,4 @@ export const NavBar = ({ cart }) => {
     )
 };
 
-const mapStateToProps = state => {
-    return {
-        cart: state.shop.cart
-    }
-};
-
-export default connect(mapStateToProps)(NavBar);
+export default NavBar;

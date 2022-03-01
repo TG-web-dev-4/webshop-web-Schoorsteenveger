@@ -41,28 +41,33 @@ const shopReducer = (state = initialState.shop, action) => {
         case actionTypes.REMOVE_FROM_CART:
             return {
                 ...state,
-                cartItems: state.cartItems.filter((cartItem) => cartItem.id !== action.payload),
+                cartItems: state.cartItems.filter((cartItem) => cartItem.id !== action.payload.id),
             };
 
         case actionTypes.DECREASE_QUANTITY:
+            console.log('ACTION PAYLOAD IN DECREASE', action.payload)
+
+            if (!action.payload.qty) return {...state}
+            
+            
             return {
                 ...state,
                 cartItems: state.cartItems.map((cartItem) =>
-                    cartItem.id === action.payload.id ? { ...cartItem, qty: action.payload.qty - 1 }
+                    cartItem.id === action.payload.id ? { ...cartItem, qty: cartItem.qty <= 0 ? 0 : cartItem.qty - action.payload.qty }
                         : cartItem
                 ),
             }
-
+            console.log("decrease cartItem", cartItem)
 
         case actionTypes.INCREASE_QUANTITY:
             return {
                 ...state,
                 cartItems: state.cartItems.map((cartItem) =>
-                    cartItem.id === action.payload.id ? { ...cartItem, qty: action.payload.qty + 1 }
+                    cartItem.id === action.payload.id ? { ...cartItem, qty: cartItem.qty + action.payload.qty }
                         : cartItem
                 ),
             }
-  
+            console.log("increase cartItem", cartItem)
 
         case actionTypes.LOAD_CURRENT_ITEM:
             return {
