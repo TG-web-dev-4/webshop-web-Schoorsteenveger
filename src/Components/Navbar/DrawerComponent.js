@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 
-const DrawerComponent = ({openDrawer, setOpenDrawer}) => {
+const DrawerComponent = ({ openDrawer, setOpenDrawer }) => {
     return (
-        <Drawer anchor="left" open={openDrawer} sx={{ bgcolor: '#f7f7f5'} }>
+        <Drawer anchor="left" open={openDrawer} sx={{ bgcolor: '#f7f7f5' }}>
             <List>
-                <ListItem divider button onClick={() => setOpenDrawer(false)}>
+                <ListItem divider button onClick={() => setOpenDrawer(true)}>
                     <ListItemIcon>
                         <ListItemText>Menu</ListItemText>
                     </ListItemIcon>
                 </ListItem>
-                <ListItem component={Link} to="/Home" style={{ textDecoration: 'none' }} divider button onClick={() => setOpenDrawer(false)}>
+                <ListItem component={Link} to="/" style={{ textDecoration: 'none' }} divider button onClick={() => setOpenDrawer(false)}>
                     <ListItemIcon>
                         <ListItemText>Home</ListItemText>
                     </ListItemIcon>
@@ -29,6 +29,11 @@ const DrawerComponent = ({openDrawer, setOpenDrawer}) => {
                 <ListItem component={Link} to="/Contact" style={{ textDecoration: 'none' }} divider button onClick={() => setOpenDrawer(false)}>
                     <ListItemIcon>
                         <ListItemText>Contact</ListItemText>
+                    </ListItemIcon>
+                </ListItem>
+                <ListItem component={Link} to="/Login" style={{ textDecoration: 'none' }} divider button onClick={() => setOpenDrawer(false)}>
+                    <ListItemIcon>
+                        <ListItemText>Login</ListItemText>
                     </ListItemIcon>
                 </ListItem>
             </List>

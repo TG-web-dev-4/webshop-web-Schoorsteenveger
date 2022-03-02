@@ -21,19 +21,6 @@ export const NavBar = () => {
     const totalItemsWithReduce = selectedCartItems.reduce((acc, curr) => acc + curr.qty, 0)
     console.log("TOTAL ITEMS", totalItemsWithReduce)
 
-    
-
-    // let totalItemsWithForEach = 0
-    // selectedCartItems.forEach(item => totalItemsWithForEach += item.qty)
-    // console.log('TOTAL WITH FOR EACH', totalItemsWithForEach)
-
-
-    // console.log("cartitems 19", cartItems)
-
-
-    // const [cartCount, setCartCount] = useState(0)
-
-
     const [anchorEl, setAnchorEl] = useState(null);
     const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -95,7 +82,7 @@ export const NavBar = () => {
                                 <Typography to="/Contact" variant="h6" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Contact</Typography>
 
                                 <Box>
-                                    <Button variant='contained' sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Login</Button>
+                                    <Button component={Link} to="/Login" variant='contained' sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Login</Button>
                                 </Box>
                             </Box>)}
 

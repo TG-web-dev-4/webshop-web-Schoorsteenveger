@@ -1,13 +1,12 @@
 import { Box, textAlign } from '@mui/system';
 import React from 'react'
 import { useParams } from 'react-router'
-import { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import products from '../../../Data/productData';
 import { AddShoppingCart, DeleteOutlineOutlined, LocalHotelRounded, BathtubRounded } from '@mui/icons-material';
-import { Grid, Typography, IconButton, Button, Card, CardContent, CardMedia, CardActionArea, Avatar, AvatarGroup, CardActions, Container } from "@mui/material";
-import { useDispatch } from 'react-redux';
-import { addToCart, removeFrom } from '../../../redux/Shopping/shoppingActions';
+import { Grid, Typography, Card, CardContent, CardMedia, CardActionArea, Avatar, CardActions } from "@mui/material";
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../../redux/Shopping/shoppingActions';
 
 
 
@@ -23,11 +22,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-function ProductDetail({ product }) {
+function ProductDetail({ product, cartItem }) {
 
     const classes = useStyles();
-    const [cartBtn, setCartBtn] = useState('Add to Cart')
     const params = useParams()
+
+    const dispatch = useDispatch()
     // const { id } = params;
 
     // console.log('USEPARAMS', useParams())
@@ -50,20 +50,18 @@ function ProductDetail({ product }) {
     // console.log('productDetail => filtereded array', productDetail)
     // console.log("Product2", products[0])
 
-    const configAddToCardBtn = {
-        type: 'button'
-    }
-    // console.log(productDetail[0].img)
+
     return (
         <>
-            <Grid container spacing={2} >
-                <Grid item component='img' src={`../assets/${productDetail[0].img}`} alt={productDetail[0].name} xs={6} md={6} sx={{ backgroundColor: 'pink' }}>
+
+            <Grid container spacing={2} sx={{ display: 'flex', mt: 50}}>
+                <Grid item component='img' src={`../assets/${productDetail[0].img}`} alt={productDetail[0].name} xs={12} md={6} lg={6} sx={{ backgroundColor: 'pink' }}>
                     {/* <Item>xs=6 md=4</Item> */}
                 </Grid>
-                <Grid item xs={6} md={6}>
+                <Grid item sx={{ display: 'flex' }}>
                     {/* <Item> */}
-                    <Card sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <CardMedia component='img' sx={{ width: 1000 }} image={`../assets/${productDetail[0].img}`} alt={productDetail[0].name} />
+                    <Card xs={12} md={12} sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <CardMedia component='img' image={`../assets/${productDetail[0].img}`} alt={productDetail[0].name} />
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{ flex: ' 1 0 auto' }}>
                                 <Typography component='div' variant='h5' gutterBottom >
@@ -72,42 +70,41 @@ function ProductDetail({ product }) {
                                 <Typography component='div' variant="subtitle1" gutterBottom >
                                     {productDetail[0].location}
                                 </Typography>
-                                <Typography component='div' variant='h5'>
+                                <Typography component='div' variant='h5' gutterBottom>
                                     €{productDetail[0].price}
                                 </Typography>
                                 <Typography variant="body1" color="textSecondary">
                                     {productDetail[0].description}
                                 </Typography>
                             </CardContent>
-                            <Box sx={{ display: 'flex', alignItems: 'center', pl: 2, pb: 2 }}>
-                                <Avatar className={classes.avatar}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', pl: 1, pb: 1 }}>
+                                <Avatar className={classes.avatar} >
                                     <LocalHotelRounded />
                                 </Avatar>
                                 <Typography variant='body2' color="textSecondary">{productDetail[0].Rooms} Rooms</Typography>
-                                <Avatar className={classes.avatar}>
+                                <Avatar className={classes.avatar} sx={{ ml: 2 }}>
                                     <BathtubRounded />
                                 </Avatar>
                                 <Typography variant='body2' color="textSecondary">{productDetail[0].Bathrooms} Bathrooms</Typography>
                             </Box>
                             <CardActions>
-                                <Box sx={{ display: 'flex', pl: 1, pb: 2 }}>
-                                    <AddShoppingCart onClick={() => addToCart(product.id)} {...configAddToCardBtn} />Add to Cart
+                                <Box sx={{ display: 'flex' }}>
+                                    {/* <AddShoppingCart onClick={() => dispatch(addToCart(product.id))} />Add to Cart */}
                                 </Box>
                             </CardActions>
                         </Box>
                     </Card>
                 </Grid>
 
-                <Grid item xs={6} md={8} sx={{ backgroundColor: 'green' }}>
-                   
+                <Grid item xs={12} md={12} sx={{ backgroundColor: 'green' }}>
+
                 </Grid>
-                <Grid item xs={6} md={4} sx={{ backgroundColor: 'blue' }}>
+                <Grid item xs={12} md={12} sx={{ backgroundColor: 'blue' }}>
                     {/* <Item>xs=6 md=8</Item> */}
                 </Grid>
             </Grid>
-            <Container>
 
-            </Container>
+
 
         </>
         // <>

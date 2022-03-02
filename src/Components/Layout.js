@@ -8,7 +8,7 @@ import React from 'react'
 const useStyles = makeStyles({
     page: {
         background: lightGreen,
-        width: '100%',
+        width: '80%',
         padding: '50px'
     }
 })

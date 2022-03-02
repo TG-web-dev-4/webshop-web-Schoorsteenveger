@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import {
     GoogleAuthProvider,
     getAuth,
+    onAuthStateChanged,
     signInWithPopup,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
@@ -17,18 +18,45 @@ import {
     addDoc,
 } from "firebase/firestore";
 
+// const firebaseConfig = {
+
+//     apiKey: "AIzaSyB6LT7vHd0jZFyXdD6jjeaR8q3DZ0QlIJ8",
+
+//     authDomain: "stokerestate.firebaseapp.com",
+
+//     projectId: "stokerestate",
+
+//     storageBucket: "stokerestate.appspot.com",
+
+//     messagingSenderId: "216601045470",
+
+// appId: "1:216601045470:web:1fa26292c017a1c1cc154f",
+
+//     measurementId: "G-2D50T1MPVS"
+
+// };
+
 const firebaseConfig = {
-    apiKey: "AIzaSyB6LT7vHd0jZFyXdD6jjeaR8q3DZ0QlIJ8",
-    authDomain: "stokerestate.firebaseapp.com",
-    projectId: "stokerestate",
-    storageBucket: "stokerestate.appspot.com",
-    messagingSenderId: "216601045470",
-    appId: "1:216601045470:web:1fa26292c017a1c1cc154f",
-    measurementId: "G-2D50T1MPVS"
+    apiKey: process.env.REACT_APP_FIREBASE_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STOREBUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGEING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+onAuthStateChanged(auth, user => {
+    if (user === 'true') {
+        console.log('logged in!')
+    } else {
+        console.log('very not logged in, no user')
+    }
+})
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
@@ -46,23 +74,27 @@ const signInWithGoogle = async () => {
             });
         }
     } catch (err) {
-
-        alert(err.message);
+        console.log(err)
     }
 };
 
-const logInWithEmailAndPassword = async (email, password) => {
-    try {
-        await signInWithEmailAndPassword(auth, email, password);
-    } catch (err) {
+const logInWithEmailAndPassword = async (auth, email, password) => {
+    console.log("huh nog steeds een string?", process.env.REACT_APP_FIREBASE_KEY)
 
-        alert(err.message);
+    try {
+        const res = await signInWithEmailAndPassword(auth, email, password);
+        console.log(res)
+        // navigate ergens heen
+    } catch (err) {
+        console.log(err)
+        alert("user not found");
     }
 };
 
 const registerWithEmailAndPassword = async (name, email, password) => {
+    console.log("Huh", process.env.REACT_APP_FIREBASE_APP_ID)
     try {
-        const res = await createUserWithEmailAndPassword(auth, email, password);
+        const res = await createUserWithEmailAndPassword(email, password);
         const user = res.user;
         await addDoc(collection(db, "users"), {
             uid: user.uid,
@@ -71,8 +103,8 @@ const registerWithEmailAndPassword = async (name, email, password) => {
             email,
         });
     } catch (err) {
-
-        alert(err.message);
+        console.error(err);
+        // alert(err.message);
     }
 };
 
@@ -81,8 +113,7 @@ const sendPasswordReset = async (email) => {
         await sendPasswordResetEmail(auth, email);
         alert("Password reset link sent!");
     } catch (err) {
-
-        alert(err.message);
+        console.log(err)
     }
 };
 
@@ -94,6 +125,7 @@ export {
     auth,
     db,
     signInWithGoogle,
+    signInWithEmailAndPassword,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     sendPasswordReset,

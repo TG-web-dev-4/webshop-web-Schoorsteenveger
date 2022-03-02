@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import Login from "./Login";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import Reset from "./Components/Reset";
+import DashBoard from "./Components/DashBoard";
 import './App.css';
 import Home from './Pages/Home'
 import AboutUs from "./Pages/AboutUs";
@@ -53,7 +56,10 @@ function App() {
               <Route path="/Products" element={<ProductList />} />
               <Route path="/Products/:id" element={<ProductDetail />} />
               <Route path="/Cart" element={<Cart />} />
-              {/* <Route exact path="/" component={Login} /> */}
+              <Route exact path="/Login" element={<Login />} />
+              <Route exact path="/register" element={<Register />} />
+              <Route exact path="/reset" element={<Reset />} />
+              <Route exact path="/DashBoard" element={<DashBoard />} />
               <Route path="/Contact" element={<Contact />} />
             </Routes>
 
