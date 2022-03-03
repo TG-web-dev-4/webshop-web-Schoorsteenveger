@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/css/main.f6894098.css",
+    "main.js": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/js/main.7d7267e9.js",
+    "static/media/synagoge.jpg": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/media/synagoge.1228c34719eb4fc08137.jpg",
+    "index.html": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/index.html",
+    "main.f6894098.css.map": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/css/main.f6894098.css.map",
+    "main.7d7267e9.js.map": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/js/main.7d7267e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6894098.css",
+    "static/js/main.7d7267e9.js"
+  ]
+}
