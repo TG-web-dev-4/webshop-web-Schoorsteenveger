@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/css/main.f6894098.css",
-    "main.js": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/js/main.d8a2f476.js",
-    "static/media/synagoge.jpg": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/media/synagoge.1228c34719eb4fc08137.jpg",
-    "index.html": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/index.html",
-    "main.f6894098.css.map": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/css/main.f6894098.css.map",
-    "main.d8a2f476.js.map": "/TG-web-dev-4.github.io/webshop-web-Schoorsteenveger/static/js/main.d8a2f476.js.map"
+    "main.css": "/webshop-web-Schoorsteenveger/static/css/main.ed75b966.css",
+    "main.js": "/webshop-web-Schoorsteenveger/static/js/main.a36f6ef6.js",
+    "static/media/synagoge.jpg": "/webshop-web-Schoorsteenveger/static/media/synagoge.1228c34719eb4fc08137.jpg",
+    "index.html": "/webshop-web-Schoorsteenveger/index.html",
+    "main.ed75b966.css.map": "/webshop-web-Schoorsteenveger/static/css/main.ed75b966.css.map",
+    "main.a36f6ef6.js.map": "/webshop-web-Schoorsteenveger/static/js/main.a36f6ef6.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6894098.css",
-    "static/js/main.d8a2f476.js"
+    "static/css/main.ed75b966.css",
+    "static/js/main.a36f6ef6.js"
   ]
 }
