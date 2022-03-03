@@ -36,8 +36,9 @@ const WovenImageList = () => {
                 {products.map((product) => (
                     <ImageListItem key={product.img}>
                         <img
-                            src={`../assets/${product.img}?w=161&fit=crop&auto=format`}
-                            srcSet={`../assets/${product.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                            // src={`../assets/${product.img}?w=161&fit=crop&auto=format`}
+                            src={`/assets/${product.img}?w=161&fit=crop&auto=format`}
+                            srcSet={`/assets/${product.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
                             alt={product.name}
                             loading="lazy"
                         />
