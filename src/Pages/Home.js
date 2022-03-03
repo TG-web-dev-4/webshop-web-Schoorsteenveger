@@ -11,7 +11,7 @@ import WovenImageList from './WovenImageList/WovenImageList'
 //     </Box>
 // )
 
-function Home({ product }) {
+function Home() {
 
     return (
         <>
@@ -20,7 +20,7 @@ function Home({ product }) {
                 {/* <Banner purpose={'For Sale'} /> */}
 
                 <Grid >
-                    <WovenImageList product={product} />
+                    <WovenImageList />
                 </Grid>
             </Box>
         </>

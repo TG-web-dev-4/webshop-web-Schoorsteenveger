@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Register.css";
-import { Link} from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import {
     auth,
     registerWithEmailAndPassword,
@@ -18,53 +18,59 @@ function Register() {
 
     const register = () => {
         if (!name) alert("Please enter name");
-        registerWithEmailAndPassword(name, email, password);
+        registerWithEmailAndPassword(auth, email, password);
         console.log(name)
         console.log(registerWithEmailAndPassword)
     };
+
     useEffect(() => {
         if (loading) return;
-        // if (user) history.replace("/dashboard");
+        // if (user) history.replace("/Home");
     }, [user, loading]);
 
     return (
-        <div className="register">
-            <div className="register__container">
-                <input
-                    type="text"
-                    className="register__textBox"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Full Name"
-                />
-                <input
-                    type="text"
-                    className="register__textBox"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="E-mail Address"
-                />
-                <input
-                    type="password"
-                    className="register__textBox"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
-                />
-                <button className="register__btn" onClick={register}>
-                    Register
-                </button>
-                <button
-                    className="register__btn register__google"
-                    onClick={signInWithGoogle}
-                >
-                    Register with Google
-                </button>
-                <div>
-                    Already have an account? <Link to="/Login">Login</Link> now.
+        <>
+            <div className="wrapperAccount filter">
+                <div className="register">
+                    <div className="register__container">
+                        <input
+                            type="text"
+                            className="register__textBox"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Full Name"
+                        />
+                        <input
+                            type="text"
+                            className="register__textBox"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="E-mail Address"
+                        />
+                        <input
+                            type="password"
+                            className="register__textBox"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Password"
+                        />
+                        <button className="register__btn" onClick={register}>
+                            Register
+                        </button>
+                        <button
+                            className="register__btn register__google"
+                            onClick={signInWithGoogle}
+                        >
+                            Register with Google
+                        </button>
+                        <div>
+                            Already have an account? <Link to="/Login">Login</Link> now.
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div>           
+        </>
+       
     );
 }
 export default Register;

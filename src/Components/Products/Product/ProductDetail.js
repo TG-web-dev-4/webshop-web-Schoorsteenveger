@@ -54,7 +54,7 @@ function ProductDetail({ product, cartItem }) {
     return (
         <>
 
-            <Grid container spacing={2} sx={{ display: 'flex', mt: 50}}>
+            <Grid container spacing={2} sx={{ display: 'flex', justifyContent: "center", mt: 10}}>
                 <Grid item component='img' src={`../assets/${productDetail[0].img}`} alt={productDetail[0].name} xs={12} md={6} lg={6} sx={{ backgroundColor: 'pink' }}>
                     {/* <Item>xs=6 md=4</Item> */}
                 </Grid>

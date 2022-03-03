@@ -54,7 +54,7 @@ onAuthStateChanged(auth, user => {
     if (user === 'true') {
         console.log('logged in!')
     } else {
-        console.log('very not logged in, no user')
+        console.log('User loged in!')
     }
 })
 
@@ -79,23 +79,26 @@ const signInWithGoogle = async () => {
 };
 
 const logInWithEmailAndPassword = async (auth, email, password) => {
-    console.log("huh nog steeds een string?", process.env.REACT_APP_FIREBASE_KEY)
+
 
     try {
         const res = await signInWithEmailAndPassword(auth, email, password);
-        console.log(res)
+        console.log("response", res)
         // navigate ergens heen
+        console.log(logInWithEmailAndPassword)
     } catch (err) {
-        console.log(err)
-        alert("user not found");
+        console.log(err.message)
+        // alert("user not found");
     }
 };
 
-const registerWithEmailAndPassword = async (name, email, password) => {
-    console.log("Huh", process.env.REACT_APP_FIREBASE_APP_ID)
+const registerWithEmailAndPassword = async (auth, name, email, password) => {
+    // console.log("Huh", process.env.REACT_APP_FIREBASE_APP_ID)
     try {
-        const res = await createUserWithEmailAndPassword(email, password);
-        const user = res.user;
+        const cred = await createUserWithEmailAndPassword(auth, name, email, password);
+        const user = cred.user;
+        console.log('user created', cred.user)
+        console.log("name logged", name)
         await addDoc(collection(db, "users"), {
             uid: user.uid,
             name,

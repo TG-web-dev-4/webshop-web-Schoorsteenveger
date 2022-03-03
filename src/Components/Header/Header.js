@@ -9,28 +9,31 @@ function Header() {
   return (
 
     <>
-      <Box sx={{
-        display: "flex", flexDirection: { xs: 'column', md: 'row' }, justifyContent: "start", alignItems: "center", padding: '50px', bgcolor: '#f7f7f5'
-      }}>
+      <Box sx={{ display: "flex", flexDirection: { xs: 'column', md: 'row' }, justifyContent: "center", aligItems: "center", py: 15, px:15, bgcolor: '#f7f7f5' }}>
         <Container maxWidth='md'>
-          <Grid container spacing={2}>
-            <Grid item sx={{ heigth: '100%', bgcolor: 'white', p: '40px 30px', m: '20px auto'}}>
-              <Typography variant="h3" textAlign={"left"} sx={{ mb: 4 }}>
-                Buying made simple
-              </Typography>
-              <Typography variant="p" textAlign={"left"}>
-                Buying but don’t know where to begin? Book in a free consultation with our property experts.
-                We can talk you through the buying process and get your documentation and finances ready.
-                Perfect for first-time buyers.
-              </Typography>
-              <Typography variant='h6' sx={{ mt: 8 }}>Search for a Home</Typography>
+          <Grid container>
+            <Grid item sx={{bgcolor: 'white', p: '40px 30px', m: '20px auto', boxShadow: 2 }}>
+              <Box>
+                <Typography variant="h3" textAlign={"left"} sx={{ textTransform: 'capitalize', mb: 4 }}>
+                  Buying made simple
+                </Typography>
+              </Box>
+              <Box>
+                <Typography variant="body1" textAlign={"left"}>
+                  Buying but don’t know where to begin? Book in a free consultation with our property experts.
+                  We can talk you through the buying process and get your documentation and finances ready.
+                  Perfect for first-time buyers.
+                </Typography>
+              </Box>
+              <Box>
+                <Typography variant='h6' sx={{ mt: 8 }}>Search for a Home</Typography>
+              </Box>
             </Grid>
-
           </Grid>
         </Container>
 
-        <Container maxWidth='lg'>
-          <Grid item sx={{ width: '100%', minHeight: '50vh', background: 'url(./assets/home.jpg)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
+        <Container minWidth='lg'>
+          <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(./assets/home.jpg)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
           >
           </Grid>
         </Container>
