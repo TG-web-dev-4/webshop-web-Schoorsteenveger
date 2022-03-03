@@ -55,13 +55,13 @@ function ProductDetail({ product, cartItem }) {
         <>
 
             <Grid container spacing={2} sx={{ display: 'flex', justifyContent: "center", mt: 10 }}>
-                <Grid item component='img' src={`/assets/${productDetail[0].img}`} alt={productDetail[0].name} xs={12} md={6} lg={6} sx={{ backgroundColor: 'pink' }}>
+                <Grid item component='img' src={`/assets/images/${productDetail[0].img}`} alt={productDetail[0].name} xs={12} md={6} lg={6} sx={{ backgroundColor: 'pink' }}>
                     {/* <Item>xs=6 md=4</Item> */}
                 </Grid>
                 <Grid item sx={{ display: 'flex' }}>
                     {/* <Item> */}
                     <Card xs={12} md={12} sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <CardMedia component='img' image={`/assets/${productDetail[0].img}`} alt={productDetail[0].name} />
+                        <CardMedia component='img' image={`/assets/images/${productDetail[0].img}`} alt={productDetail[0].name} />
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{ flex: ' 1 0 auto' }}>
                                 <Typography component='div' variant='h5' gutterBottom >

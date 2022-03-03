@@ -21,7 +21,7 @@ export const CartItem = ({ cartItem }) => {
         <>
 
             <Card className={classes.root}>
-                <CardMedia className={classes.media} component='img' sx={{ width: 500 }} image={`../assets/${cartItem.img[0]}`} alt={cartItem.name} />
+                <CardMedia className={classes.media} component='img' sx={{ width: 500 }} image={`/assets/images/${cartItem.img[0]}`} alt={cartItem.name} />
                 <CardContent sx={{ flex: ' 1 0 auto' }}>
                     <Typography className={classes.CardContent} variant="h4" gutterBottom>{cartItem.name}</Typography>
                     <Typography>${cartItem.price}</Typography>
@@ -34,7 +34,7 @@ export const CartItem = ({ cartItem }) => {
                     <Button onClick={() => dispatch(removeFromCart(cartItem.id))} type="button" color="secondary">X Remove</Button>
                 </CardActions>
             </Card>
-            
+
 
         </>
 

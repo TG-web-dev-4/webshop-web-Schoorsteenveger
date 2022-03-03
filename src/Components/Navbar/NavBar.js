@@ -49,7 +49,7 @@ export const NavBar = () => {
 
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
                                 <Typography component={Link} to="/" variant="h6" color="inherit">
-                                    <img style={{ textDecoration: 'none' }} src={`../assets/images/castle_logo.PNG`} alt="Stoker Real Estate" height="150vh" />
+                                    <img style={{ textDecoration: 'none' }} src={`/assets/images/castle_logo.PNG`} alt="Stoker Real Estate" height="150vh" />
                                 </Typography>
                                 <Typography variant='h4'>Stoker Real Estate</Typography>
                             </Box>

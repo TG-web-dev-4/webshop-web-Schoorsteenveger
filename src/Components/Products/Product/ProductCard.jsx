@@ -17,7 +17,7 @@ const Product = ({ product }) => {
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={`../assets/images/${product.img}`} title={product.name} color="textSecondary"/>
+            <CardMedia className={classes.media} image={`/assets/images/${product.img}`} title={product.name} color="textSecondary"/>
             <CardContent>
                 <div className={classes.CardContent}>
                     <Typography variant ="h5" gutterBottom color="textSecondary">
