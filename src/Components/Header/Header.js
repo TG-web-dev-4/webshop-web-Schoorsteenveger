@@ -10,7 +10,7 @@ function Header() {
 
     <>
       <Box sx={{ display: "flex", flexDirection: { xs: 'column', md: 'row' }, justifyContent: "center", aligItems: "center", py: 15, px: 15, bgcolor: '#f7f7f5' }}>
-        <Container maxWidth='md'>
+        <Container maxWidth='lg'>
           <Grid container>
             <Grid item sx={{ bgcolor: 'white', p: '40px 30px', m: '20px auto', boxShadow: 2 }}>
               <Box>

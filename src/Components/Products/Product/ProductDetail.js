@@ -55,12 +55,11 @@ function ProductDetail({ product, cartItem }) {
         <>
 
             <Grid container spacing={4} sx={{ display: 'flex', justifyContent: "center" }}>
-                <Grid item maxWidth={(theme) => theme.breakpoints.values.sm} xs={12} md={6} lg={6} component='img' src={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} sx={{ backgroundColor: 'pink' }}>
-                    {/* <Item>xs=6 md=4</Item> */}
+                <Grid item xs={12} md={6} component='img' src={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} sx={{ backgroundColor: 'pink' }}>
                 </Grid>
-                <Grid item maxWidth={(theme) => theme.breakpoints.values.sm} sx={{ display: 'flex' }}>
+                <Grid item sx={{ display: 'flex' }} xs={12} md={6} lg={6} >
                     {/* <Item> */}
-                    <Card xs={12} md={12} sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <Card>
                         <CardMedia component='img' image={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} />
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{ flex: ' 1 0 auto' }}>
@@ -89,7 +88,7 @@ function ProductDetail({ product, cartItem }) {
                             </Box>
                             <CardActions>
                                 <Box sx={{ display: 'flex' }}>
-                                    <AddShoppingCart onClick={""} />Add to Cart
+                                    <AddShoppingCart onClick={""} gutterBottom/>Add to Cart
                                 </Box>
                             </CardActions>
                         </Box>
