@@ -54,11 +54,11 @@ function ProductDetail({ product, cartItem }) {
     return (
         <>
 
-            <Grid container spacing={2} sx={{ display: 'flex', justifyContent: "center", mt: 10 }}>
-                <Grid item component='img' src={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} xs={12} md={6} lg={6} sx={{ backgroundColor: 'pink' }}>
+            <Grid container spacing={4} sx={{ display: 'flex', justifyContent: "center" }}>
+                <Grid item maxWidth={(theme) => theme.breakpoints.values.sm} xs={12} md={6} lg={6} component='img' src={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} sx={{ backgroundColor: 'pink' }}>
                     {/* <Item>xs=6 md=4</Item> */}
                 </Grid>
-                <Grid item sx={{ display: 'flex' }}>
+                <Grid item maxWidth={(theme) => theme.breakpoints.values.sm} sx={{ display: 'flex' }}>
                     {/* <Item> */}
                     <Card xs={12} md={12} sx={{ display: 'flex', flexDirection: 'column' }}>
                         <CardMedia component='img' image={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} />
@@ -89,7 +89,7 @@ function ProductDetail({ product, cartItem }) {
                             </Box>
                             <CardActions>
                                 <Box sx={{ display: 'flex' }}>
-                                    {/* <AddShoppingCart onClick={() => dispatch(addToCart(product.id))} />Add to Cart */}
+                                    <AddShoppingCart onClick={""} />Add to Cart
                                 </Box>
                             </CardActions>
                         </Box>
