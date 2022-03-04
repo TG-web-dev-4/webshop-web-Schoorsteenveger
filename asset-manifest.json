@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "./static/css/main.42ed57ec.css",
-    "main.js": "./static/js/main.803abc5a.js",
+    "main.js": "./static/js/main.cd5858fc.js",
     "static/media/synagoge.jpg": "./static/media/synagoge.1228c34719eb4fc08137.jpg",
     "index.html": "./index.html",
     "main.42ed57ec.css.map": "./static/css/main.42ed57ec.css.map",
-    "main.803abc5a.js.map": "./static/js/main.803abc5a.js.map"
+    "main.cd5858fc.js.map": "./static/js/main.cd5858fc.js.map"
   },
   "entrypoints": [
     "static/css/main.42ed57ec.css",
-    "static/js/main.803abc5a.js"
+    "static/js/main.cd5858fc.js"
   ]
 }
