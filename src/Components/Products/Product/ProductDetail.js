@@ -55,13 +55,13 @@ function ProductDetail({ product, cartItem }) {
         <>
 
             <Grid container spacing={2} sx={{ display: 'flex', justifyContent: "center", mt: 10 }}>
-                <Grid item component='img' src={`../../public/images/${productDetail[0].img}`} alt={productDetail[0].name} xs={12} md={6} lg={6} sx={{ backgroundColor: 'pink' }}>
+                <Grid item component='img' src={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} xs={12} md={6} lg={6} sx={{ backgroundColor: 'pink' }}>
                     {/* <Item>xs=6 md=4</Item> */}
                 </Grid>
                 <Grid item sx={{ display: 'flex' }}>
                     {/* <Item> */}
                     <Card xs={12} md={12} sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <CardMedia component='img' image={`../../public/images/${productDetail[0].img}`} alt={productDetail[0].name} />
+                        <CardMedia component='img' image={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} />
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{ flex: ' 1 0 auto' }}>
                                 <Typography component='div' variant='h5' gutterBottom >
@@ -104,58 +104,8 @@ function ProductDetail({ product, cartItem }) {
                 </Grid>
             </Grid>
 
-
-
         </>
-        // <>
-        //     <Box sx={{ display: "flex" }}>
-        //         <Grid container spacing={1} bgcolor='orange' sx={{ display: 'flex', flexDirection:'column' }}>
-        //             {/* <CardMedia component='img' className={classes.media} image={`../assets/${productDetail[0].img}`} title={products[0].name} color="textSecondary" />     */}
-        //             {/* <CardMedia className={classes.media} image={`../assets/${productDetail[0].img}`} alt={productDetail[0].name}></CardMedia> */}
-        //             <Grid item xs={12} sm={6} md={6} lg={6}>
-        //                 <img width={'100%'} height={'auto'} src={`../assets/${productDetail[0].img}`} alt={productDetail[0].name} />
-        //             </Grid>
 
-
-
-        //             <Grid item xs={12} sm={6} md={6} lg={6} bgcolor='#f7f7f5'>
-        //                 <Typography variant="h4" gutterBottom color="textSecondary">
-        //                     {productDetail[0].name}
-        //                 </Typography>
-        //                 <Typography variant="h5" gutterBottom color="textSecondary">
-        //                     {productDetail[0].location}
-        //                 </Typography>
-        //                 <Typography variant="h5" color="textSecondary">$
-        //                     {productDetail[0].price}
-        //                 </Typography>
-        //                 <Typography variant="body2" color="textSecondary">{productDetail[0].description}
-        //                 </Typography>
-
-        //                 <Grid item padding={3} sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-        //                     <Avatar className={classes.avatar}>
-        //                         <LocalHotelRounded />
-        //                     </Avatar>
-        //                     <Typography variant='body2' color="textSecondary">{productDetail[0].Rooms} Rooms</Typography>
-
-        //                     <Avatar className={classes.avatar}>
-        //                         <BathtubRounded />
-        //                     </Avatar>
-        //                     <Typography variant='body2' color="textSecondary">{productDetail[0].Bathrooms} Bathrooms</Typography>
-        //                 </Grid>
-
-        //                 <Grid item padding={4} sx={{ display: 'flex', justifyContent: 'center', backgroundColor: "pink", textAlign: 'left' }}>
-        //                     <AddShoppingCart {...configAddToCardBtn} />Add to Cart
-
-        //                 </Grid>
-
-
-
-        //             </Grid>
-        //         </Grid>                
-
-        //     </Box>
-
-        // </>
     )
 }
 

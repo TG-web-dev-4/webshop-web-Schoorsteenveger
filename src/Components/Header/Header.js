@@ -33,7 +33,8 @@ function Header() {
         </Container>
 
         <Container minWidth='lg'>
-          <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(../../public/images/home.JPG)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
+          <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(./images/home.JPG)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
+          // <img src={process.env.PUBLIC_URL + ‘/img/logo.png’} /></Container>
 
           >
           </Grid>
