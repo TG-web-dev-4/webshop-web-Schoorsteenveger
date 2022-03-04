@@ -33,7 +33,7 @@ function Header() {
         </Container>
 
         <Container minWidth='lg'>
-          <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(/assets/images/home.JPG)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
+          <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(/images/home.JPG)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
           >
           </Grid>
         </Container>
