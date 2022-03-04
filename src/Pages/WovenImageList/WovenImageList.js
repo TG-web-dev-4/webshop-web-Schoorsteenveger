@@ -38,8 +38,8 @@ const WovenImageList = () => {
                         {/* <img src={process.env.PUBLIC_URL + ‘/img/logo.png’} /> */}
                         <img
                             // src={`../assets/${product.img}?w=161&fit=crop&auto=format`}
-                            src={`/images/${product.img}?w=161&fit=crop&auto=format`}
-                            srcSet={`/images/${product.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                            src={process.env.PUBLIC_URL + `/images/${product.img}?w=161&fit=crop&auto=format`}
+                            srcSet={process.env.PUBLIC_URL + `/images/${product.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
                             alt={product.name}
                             loading="lazy"
                         />

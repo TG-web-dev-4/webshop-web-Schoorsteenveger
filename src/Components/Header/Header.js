@@ -4,16 +4,15 @@ import { Typography, Grid, Box, Paper, Container } from '@mui/material';
 import { margin } from '@mui/system';
 
 
-
 function Header() {
 
   return (
 
     <>
-      <Box sx={{ display: "flex", flexDirection: { xs: 'column', md: 'row' }, justifyContent: "center", aligItems: "center", py: 15, px:15, bgcolor: '#f7f7f5' }}>
+      <Box sx={{ display: "flex", flexDirection: { xs: 'column', md: 'row' }, justifyContent: "center", aligItems: "center", py: 15, px: 15, bgcolor: '#f7f7f5' }}>
         <Container maxWidth='md'>
           <Grid container>
-            <Grid item sx={{bgcolor: 'white', p: '40px 30px', m: '20px auto', boxShadow: 2 }}>
+            <Grid item sx={{ bgcolor: 'white', p: '40px 30px', m: '20px auto', boxShadow: 2 }}>
               <Box>
                 <Typography variant="h3" textAlign={"left"} sx={{ textTransform: 'capitalize', mb: 4 }}>
                   Buying made simple
@@ -34,8 +33,8 @@ function Header() {
         </Container>
 
         <Container minWidth='lg'>
-          <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(/images/home.JPG)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
-  
+          <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(../../public/images/home.JPG)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
+
           >
           </Grid>
         </Container>

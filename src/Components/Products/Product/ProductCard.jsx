@@ -17,7 +17,7 @@ const Product = ({ product }) => {
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={`/images/${product.img}`} title={product.name} color="textSecondary" />
+            <CardMedia className={classes.media} image={`../../public/images/${product.img}`} title={product.name} color="textSecondary" />
             {/* <img src={process.env.PUBLIC_URL + ‘/img/logo.png’} /> */}
             <CardContent>
                 <div className={classes.CardContent}>
