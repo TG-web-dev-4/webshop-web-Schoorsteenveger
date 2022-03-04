@@ -4,6 +4,7 @@ import { Typography, Grid, Box, Paper, Container } from '@mui/material';
 import { margin } from '@mui/system';
 
 
+
 function Header() {
 
   return (
@@ -34,6 +35,7 @@ function Header() {
 
         <Container minWidth='lg'>
           <Grid item sx={{ width: '100%', minHeight: '35vh', background: 'url(/images/home.JPG)', backgroundSize: "contain", backgroundRepeat: "no-repeat" }}
+  
           >
           </Grid>
         </Container>

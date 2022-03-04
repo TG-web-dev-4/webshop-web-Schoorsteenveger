@@ -35,6 +35,7 @@ const WovenImageList = () => {
             <ImageList sx={{ alignContent: 'center' }} variant="woven" cols={3} gap={45}>
                 {products.map((product) => (
                     <ImageListItem key={product.img}>
+                        {/* <img src={process.env.PUBLIC_URL + ‘/img/logo.png’} /> */}
                         <img
                             // src={`../assets/${product.img}?w=161&fit=crop&auto=format`}
                             src={`/images/${product.img}?w=161&fit=crop&auto=format`}
