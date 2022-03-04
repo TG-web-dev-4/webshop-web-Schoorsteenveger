@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/webshop-web-Schoorsteenveger/static/css/main.ed75b966.css",
-    "main.js": "/webshop-web-Schoorsteenveger/static/js/main.fa4e53ac.js",
-    "static/media/synagoge.jpg": "/webshop-web-Schoorsteenveger/static/media/synagoge.1228c34719eb4fc08137.jpg",
-    "index.html": "/webshop-web-Schoorsteenveger/index.html",
-    "main.ed75b966.css.map": "/webshop-web-Schoorsteenveger/static/css/main.ed75b966.css.map",
-    "main.fa4e53ac.js.map": "/webshop-web-Schoorsteenveger/static/js/main.fa4e53ac.js.map"
+    "main.css": "./static/css/main.42ed57ec.css",
+    "main.js": "./static/js/main.803abc5a.js",
+    "static/media/synagoge.jpg": "./static/media/synagoge.1228c34719eb4fc08137.jpg",
+    "index.html": "./index.html",
+    "main.42ed57ec.css.map": "./static/css/main.42ed57ec.css.map",
+    "main.803abc5a.js.map": "./static/js/main.803abc5a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed75b966.css",
-    "static/js/main.fa4e53ac.js"
+    "static/css/main.42ed57ec.css",
+    "static/js/main.803abc5a.js"
   ]
 }
