@@ -10,7 +10,7 @@ import Contact from "./Pages/Contact";
 import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
 import ProductList from "./Components/Products/ProductList";
-import Cart from "./Pages/Cart";
+import ShoppingBag from "./Pages/ShoppingBag";
 import NavBar from "./Components/Navbar/NavBar"
 import DrawerComponent from "./Components/Navbar/DrawerComponent";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -55,7 +55,7 @@ function App() {
               <Route path="/Abouts" element={<AboutUs />} />
               <Route path="/Products" element={<ProductList />} />
               <Route path="/Products/:id" element={<ProductDetail />} />
-              <Route path="/Cart" element={<Cart />} />
+              <Route path="/Cart" element={<ShoppingBag />} />
               <Route exact path="/Login" element={<Login />} />
               <Route exact path="/register" element={<Register />} />
               <Route exact path="/reset" element={<Reset />} />
