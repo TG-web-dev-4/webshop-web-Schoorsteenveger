@@ -1,4 +1,3 @@
-import { autocompleteClasses } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({

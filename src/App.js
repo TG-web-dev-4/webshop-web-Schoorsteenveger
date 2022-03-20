@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Reset from "./Components/Reset";
@@ -22,10 +22,18 @@ import ProductDetail from './Components/Products/Product/ProductDetail'
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#bd3e5e'
+      main: '#8c9eff',
+      light: '#aeaeae',
+      dark: '#aeaeae',
     },
     secondary: {
-      main: '#6628ae'
+      main: '#757575',
+      light: '#a4a4a4',
+      dark: "#494949",
+    },
+    typography: {
+      fontFamily: 'Cinzel',
+      fontWeightRegular: '500',
     },
     spacing: 2,
     breakpoints: {
@@ -35,7 +43,7 @@ const theme = createTheme({
         tablet: 650,
         desktop: 900
       }
-    }
+    }  
   }
 })
 

@@ -9,8 +9,7 @@ import { useTheme } from '@mui/material/styles';
 // import { initialState } from '../../Data/initialState';
 import DrawerComponent from './DrawerComponent';
 import { useMediaQuery } from '@mui/material';
-import TablePaginationActions from '@mui/material/TablePagination/TablePaginationActions';
-// import useStyles from './styles';
+
 
 
 export const NavBar = () => {
@@ -58,7 +57,7 @@ export const NavBar = () => {
                             {matches ? (<DrawerComponent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />) : (<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 
                                 {/* <Typography component={Link} to="/" style={{ textDecoration: 'none' }} variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Home</Typography> */}
-                                <Typography variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}
+                                <Typography variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "sec" }}
                                     aria-controls='basic-menu'
                                     aria-haspopup="true"
                                     aria-expanded={openMenu ? 'true' : undefined}
@@ -79,11 +78,11 @@ export const NavBar = () => {
                                     <MenuItem component={Link} to="/Buy" onClick={() => handleClose}>Buy
                                     </MenuItem>
                                 </Menu>
-                                <Typography to="/AboutUs" variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>About us</Typography>
-                                <Typography to="/Contact" variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Contact</Typography>
+                                <Typography to="/AboutUs" variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>About us</Typography>
+                                <Typography to="/Contact" variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Contact</Typography>
 
                                 <Box>
-                                    <Button component={Link} to="/Login" variant='contained' sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Login</Button>
+                                    <Button component={Link} to="/Login" variant='contained' sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Login</Button>
                                 </Box>
                             </Box>)}
 
@@ -101,8 +100,8 @@ export const NavBar = () => {
                                 <Badge badgeContent={totalItemsWithReduce <= 0 ? 0 : totalItemsWithReduce} color="secondary">
                                     <ShoppingCart sx={{ fontSize: 30 }} />
                                 </Badge>
-                                </IconButton>
-                                
+                            </IconButton>
+
                         )}
 
                     </Toolbar>

@@ -13,12 +13,12 @@ export const CartItem = ({ cartItem }) => {
 
     return (
         <>
-            <Box marginBottom={3}>
+            <Box marginBottom={4}>
                 <Card className={classes.root}>
-                    <CardMedia className={classes.media} component='img' sx={{ width: 500 }} image={process.env.PUBLIC_URL + `../images/${cartItem.img}`} alt={cartItem.name} />
-                    <CardContent sx={{ flex: ' 1 0 auto' }}>
+                    <CardMedia className={classes.media} component='img' sx={{ width: 500 }} src={process.env.PUBLIC_URL + `../images/${cartItem.img}`} alt={cartItem.name} />
+                    <CardContent>
                         <Typography className={classes.CardContent} variant="h4" gutterBottom>{cartItem.name}</Typography>
-                        <Typography>${cartItem.price}</Typography>
+                        <Typography className={classes.CardContent}>${cartItem.price}</Typography>
                     </CardContent>
                     <CardActions className={classes.CardActions}>
                         <Button onClick={() => dispatch(decreaseQTY(cartItem.id, 1))} type="button">-</Button>

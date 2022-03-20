@@ -1,32 +1,26 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
-    media: {
-        height: 160,
+    cardMedia: {
+        height: 0,
+        paddingTop: '56.25%',
     },
-    cardContent: {
-        display: 'flex',
+    CardContent: {
+        display: 'flex',      
         justifyContent: 'space-between',
+        fontSize: '1.7rem',
     },
-    cartActions: {
-        justifyContent: 'space-between',
+    CardActions: {
+        justifyContent: 'space-evenly',
     },
     buttons: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
     },
-    totalAmount: {
+    TotalAmount: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
     },
-    checkoutBox: {
-        display: 'flex',
-        alignItems: 'center',
-        // justifyContent: 'space-between',
-        width: '100%',
-        backgroundColor: 'grey',
-        height: '100',
-    }
 }));
