@@ -46,18 +46,20 @@ export const NavBar = () => {
 
                         <Box sx={{ display: "flex", justifyContent: "space-between", alignContent: "center", alignItems: "center", width: "100%", padding: "20px 0" }} component="div">
 
-                            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
+                            <Box >
                                 <Typography component={Link} to="/" variant="h6" color="inherit">
-                                    <img style={{ textDecoration: 'none' }} src={process.env.PUBLIC_URL + '/images/castle_logo.png'} alt="Stoker Real Estate" height="150vh" />
+                                    <img display='flex' style={{ textDecoration: 'none' }} src={process.env.PUBLIC_URL + '/images/castle_logo.png'} alt="Stoker Real Estate" height="150vh" />
                                 </Typography>
-                                <Typography variant='h4'>Stoker Real Estate</Typography>
                             </Box>
-
+                            <Box>
+                                <Typography variant='h4' fontFamily="Cinzel" fontWeight={700}>Stoker Real Estate</Typography>
+                            </Box>
+                                
                             {/*Links*/}
                             {matches ? (<DrawerComponent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />) : (<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 
                                 {/* <Typography component={Link} to="/" style={{ textDecoration: 'none' }} variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Home</Typography> */}
-                                <Typography variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "sec" }}
+                                <Typography variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}
                                     aria-controls='basic-menu'
                                     aria-haspopup="true"
                                     aria-expanded={openMenu ? 'true' : undefined}

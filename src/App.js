@@ -3,37 +3,50 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Reset from "./Components/Reset";
 import DashBoard from "./Components/DashBoard";
+import Layout from "./Components/Layout";
 import './App.css';
 import Home from './Pages/Home'
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
-import Header from "./Components/Header/Header";
-// import Footer from "./Components/Footer/Footer";
+import Footer from "./Components/Footer/Footer";
 import ProductList from "./Components/Products/ProductList";
 import ShoppingBag from "./Pages/ShoppingBag";
 import NavBar from "./Components/Navbar/NavBar"
 import DrawerComponent from "./Components/Navbar/DrawerComponent";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
-import Layout from "./Components/Layout";
 import ProductDetail from './Components/Products/Product/ProductDetail'
 
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#8c9eff',
-      light: '#aeaeae',
-      dark: '#aeaeae',
+      main: '#9bb1ff',
+      light: '#cee3ff',
+      dark: '#6982cb'
     },
     secondary: {
       main: '#757575',
       light: '#a4a4a4',
-      dark: "#494949",
+      dark: "494949",
     },
     typography: {
-      fontFamily: 'Cinzel',
+      fontFamily: ['Cinzel', 'serif', 'Taviraj', 'serif'].join(','),
       fontWeightRegular: '500',
+      fontSize: '18',
+    },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides:
+          `
+          @font-face {
+            font-family: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: local('Cinzel'), 
+          }
+        `
+      },
     },
     spacing: 2,
     breakpoints: {
@@ -56,8 +69,7 @@ function App() {
         <Router>
           <Layout>
             <DrawerComponent />
-            <NavBar />
-            {/* <Header /> */}
+            <NavBar />          
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Abouts" element={<AboutUs />} />
@@ -70,7 +82,7 @@ function App() {
               <Route exact path="/DashBoard" element={<DashBoard />} />
               <Route path="/Contact" element={<Contact />} />
             </Routes>
-
+            <Footer />
             <div className="App">
             </div>
           </Layout>
