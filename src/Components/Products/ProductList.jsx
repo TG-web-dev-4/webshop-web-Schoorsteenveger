@@ -4,6 +4,7 @@ import { Grid} from '@mui/material';
 import {  useSelector } from 'react-redux';
 import ProductCard from './Product/ProductCard'; 
 import { v4 } from 'uuid';
+import Banner from '../Banner/Banner';
 
 
 
@@ -15,8 +16,9 @@ const ProductList = () => {
   return (
     
     <>
-      <Grid sx={{ display: 'flex', justifyContent: "center", backgroundColor:"secondary" }}>
-        <Typography variant="h3" color="secondary" >Choose your forever home</Typography>
+      <Banner />
+      <Grid sx={{ display: 'flex', justifyContent: "center", alignItems: "center", backgroundColor:"secondary", height: "25vh" }}>
+        <Typography variant="h3" fontFamily="primary" color="secondary.dark" >Choose your forever home</Typography>
       </Grid>
         
       <Grid sx={{ display: 'flex', justifyContent: "center" }} container spacing={4}>

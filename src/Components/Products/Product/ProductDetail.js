@@ -37,12 +37,12 @@ function ProductDetail() {
     return (
         <>
 
-            <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', p: 2 }}>
-                <Grid item xs={12} md={6} component='img' src={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} sx={{ backgroundColor: 'pink' }}>
+            <Grid container maxWidth="90vw" margin="0 auto" spacing={2} sx={{ display: 'flex', justifyContent: 'center', p: 2 }}>
+                <Grid width="100vw" item xs={12} md={6} lg={6} component='img' src={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} sx={{ backgroundColor: 'pink' }}>
                 </Grid>
-                <Grid item sx={{ display: 'flex' }} xs={12} md={6} lg={6} >
+                <Grid item width="100vw" sx={{ display: 'flex' }} xs={12} md={6} lg={6} >
                     <Card className={classes.card}>
-                        <CardMedia component='img' image={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} />
+                        {/* <CardMedia component='img' image={process.env.PUBLIC_URL + `/images/${productDetail[0].img}`} alt={productDetail[0].name} /> */}
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{ flex: ' 1 0 auto' }}>
                                 <Typography component='div' variant='h5' gutterBottom >

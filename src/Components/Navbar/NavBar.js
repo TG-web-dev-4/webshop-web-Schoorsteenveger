@@ -6,7 +6,6 @@ import { ShoppingCart } from '@mui/icons-material';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { Box } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
-// import { initialState } from '../../Data/initialState';
 import DrawerComponent from './DrawerComponent';
 import { useMediaQuery } from '@mui/material';
 
@@ -40,25 +39,26 @@ export const NavBar = () => {
 
             <Box mt={25}>
 
-                <AppBar position='fixed' color="secondary">
+                <AppBar position='fixed' color="primary">
 
                     <Toolbar>
 
-                        <Box sx={{ display: "flex", justifyContent: "space-between", alignContent: "center", alignItems: "center", width: "100%", padding: "20px 0" }} component="div">
-
-                            <Box >
-                                <Typography component={Link} to="/" variant="h6" color="inherit">
-                                    <img display='flex' style={{ textDecoration: 'none' }} src={process.env.PUBLIC_URL + '/images/castle_logo.png'} alt="Stoker Real Estate" height="150vh" />
+                        <Box sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row'} ,justifyContent: "space-between", alignContent: "center", alignItems: "center", width: "100%" }} py={3} component="div">
+                            
+                            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' }}} >
+                                <Typography component={Link} to="/" variant="h6" color="inherit" marginLeft={6}>
+                                    
+                                    <img style={{ textDecoration: 'none' }} src={process.env.PUBLIC_URL + '/images/castle_logo.png'} alt="Stoker Real Estate" height="150vh" />
+                                   
                                 </Typography>
+                                <Box>
+                                    <Typography variant='h4' fontFamily="Cinzel" fontWeight={700}>Stoker Real Estate</Typography>
+                                </Box>
                             </Box>
-                            <Box>
-                                <Typography variant='h4' fontFamily="Cinzel" fontWeight={700}>Stoker Real Estate</Typography>
-                            </Box>
-                                
-                            {/*Links*/}
+                            
+
                             {matches ? (<DrawerComponent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />) : (<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 
-                                {/* <Typography component={Link} to="/" style={{ textDecoration: 'none' }} variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "greenyellow" }}>Home</Typography> */}
                                 <Typography variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}
                                     aria-controls='basic-menu'
                                     aria-haspopup="true"
@@ -70,7 +70,6 @@ export const NavBar = () => {
                                     anchorEl={anchorEl}
                                     open={openMenu}
                                     onClose={handleClose}
-                                    variant="h5"
 
                                 >
                                     <MenuItem component={Link} to="/Products" onClick={() => handleClose}>All
@@ -84,7 +83,7 @@ export const NavBar = () => {
                                 <Typography to="/Contact" variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Contact</Typography>
 
                                 <Box>
-                                    <Button component={Link} to="/Login" variant='contained' sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Login</Button>
+                                    <Button component={Link} to="/Login" variant='contained' color="secondary" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Login</Button>
                                 </Box>
                             </Box>)}
 
@@ -98,7 +97,7 @@ export const NavBar = () => {
 
                         ) : (
 
-                            <IconButton component={Link} to="/Cart" aria-label='Show cart items' sx={{ backgroundColor: 'white', color: 'black' }}>
+                            <IconButton component={Link} to="/Cart" aria-label='Show cart items' sx={{ backgroundColor: 'white', color: 'primary' }}>
                                 <Badge badgeContent={totalItemsWithReduce <= 0 ? 0 : totalItemsWithReduce} color="secondary">
                                     <ShoppingCart sx={{ fontSize: 30 }} />
                                 </Badge>

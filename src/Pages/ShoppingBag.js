@@ -9,7 +9,7 @@ function ShoppingBag({ cartItem }) {
 
     return (
         <>
-            <Grid sx={{ display: 'flex', justifyContent: "space-around", flexDirection: { xs: 'column', md: 'row' }, backgroundColor: 'blue' }} p={5}>
+            <Grid sx={{ display: 'flex', justifyContent: "space-around", flexDirection: { xs: 'column', md: 'row' }}} p={5}>
                 <Grid container spacing={2} >
                     <Grid item xs={12} sm={6} md={12} lg={12} py={2} alignItems="center">
                         <Typography variant="h4">Your Purchase</Typography>
