@@ -1,20 +1,50 @@
 import * as React from 'react';
 import { Typography, Grid, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  textUnderline: {
+    position: 'relative',
+    paddingBottom: '40px',
+    overflow: 'hidden',
+    display: 'inline-block',
+    textTransform: 'uppercase',
+    fontWeight: 800
+  },
+  underline: {
+    minWidth: '0%',
+    transition: 'all .45s ease-in-out',
+    height: '4px',
+    top: '25px',
+    // position: 'absolute',
+    bottom: '0',
+    backgroundColor: 'black',
+    transform: 'rotate(0deg)',
+    cursor: 'pointer',
+    '&:hover': {
+      minWidth: '100%',
+      transform: 'rotate(0deg)'
+    }
+  }
+})
+   
 
 function Header() {
+
+  const classes = useStyles();
 
   return (
 
     <>
-      <Grid container fullWidth sx={{ flexWrap: "nowrap", flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' }, alignItems: 'center', bgcolor: 'secondary.main' }}>
-        <Grid container item order={2} sx={{ height: "60vh", background: 'url(./images/home.jpg)', backgroundSize: "cover", backgroundRepeat: "no-repeat", justifyContent: "flex-end"}} >
-            <Typography variant="h3" fontFamily="primary" color="primary.light">Find the house of your dreams</Typography>
+      <Grid container fullWidth sx={{ flexWrap: "nowrap", flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' }, alignItems: 'center', bgcolor: 'secondary.light', marginY: '-4rem' }}>
+        <Grid container item order={2} sx={{ height: "50vh", background: 'url(./images/home.jpg)', backgroundSize: "cover", backgroundRepeat: "no-repeat", justifyContent: "center", alignItems: "flex-end"}} >
+            <Typography variant="h3" fontFamily="primary" color="primary.light" pl= "1em" gutterBottom>Find the house of your dreams</Typography>
         </Grid>
 
-        <Grid container item height="50vh" sx={{
-          alignItems: "center", bgcolor: 'secondary.light' }} >
-          <Grid item sx={12} p={6} mx={6}>
+        <Grid container item height="100%" sx={{
+          alignItems: "center", bgcolor: 'secondary.light', justifyContent: 'center' }} >
+          <Grid item sx={12} px={2} py={4} m="2rem" height= "100%" width="70%" >
             <Box>
               <Typography variant="h3" fontFamily="primary" textAlign={"left"}sx={{ textTransform: 'capitalize', mb: 6 }}  >
                 Buying made simple
@@ -27,9 +57,11 @@ function Header() {
                 Perfect for first-time buyers.
               </Typography>
             </Box>
-            <Box sx={{ borderBottom: "solid 2px black", width: '13rem' }} pt={2} order={1}>
+            <Box classname={classes.textUnderline}  pt={2} order={1}>
               <Typography component={Link} to="/Products" style={{ textDecoration: 'none', color: 'black' }} variant='h6' fontFamily="Cinzel" sx={{ mt: 4 }}>Search for a Home</Typography>
+              <Box component='span' sx={{ display: 'block' }} className={classes.underline}></Box>
             </Box>
+            
           </Grid>
 
 

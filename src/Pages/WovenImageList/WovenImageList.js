@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 const WovenImageList = () => {
 
     return (
-        <Box maxWidth={'85vw'} p={4}>
+        <Box maxWidth={'85vw'} height= "100%" p={4}>
             <ImageList sx={{ alignContent: 'center'}} variant="woven" cols={3} gap={16} >
                 {products.map((product) => (
                     <ImageListItem key={product.img}>

@@ -17,18 +17,17 @@ const ProductList = () => {
     
     <>
       <Banner />
-      <Grid sx={{ display: 'flex', justifyContent: "center", alignItems: "center", backgroundColor:"secondary", height: "25vh" }}>
-        <Typography variant="h3" fontFamily="primary" color="secondary.dark" >Choose your forever home</Typography>
-      </Grid>
+        <Grid sx={{ display: 'flex', justifyContent: "center", alignItems: "center", backgroundColor:"secondary", height: "25vh" }}>
+         <Typography variant="h3" fontFamily="primary" color="secondary.dark" textAlign="center" >Choose your forever home</Typography>
+       </Grid>
         
-      <Grid sx={{ display: 'flex', justifyContent: "center" }} container spacing={4}>
-        {products.map(product => (
-          <Grid key={v4()} item xs={12} sm={6} md={6} lg={3}>       
-            <ProductCard key={product.id} product={product}  />             
-          </Grid>
-            ))}
-      </Grid>      
-    
+        <Grid fullWidth marginBottom="3em" sx={{ display: 'flex', justifyContent: "center" }} container spacing={6}>
+          {products.map(product => (
+            <Grid key={v4()} item xs={12} sm={6} md={6} lg={3}>       
+             <ProductCard key={product.id} product={product}  />             
+            </Grid>
+              ))}
+        </Grid>       
     </>
       
    

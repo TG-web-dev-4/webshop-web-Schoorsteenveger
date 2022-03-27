@@ -20,7 +20,7 @@ const CartList = () => {
 
     return (
         <>
-            <Grid sx={{ display: 'flex', justifyContent: "flex-start", flexWrap: "wrap", backgroundColor: 'grey.600' }} p={8}>
+            <Grid sx={{ display: 'flex', justifyContent: "flex-start", flexWrap: "wrap", backgroundColor: 'grey.100' }} p={8}>
                 <Grid container spacing={2} mt={2} p={6} sx={{ justifyContent: "flex-start", display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'grey.200' }} >
                     <Typography variant="h4" justifyItems='left'>Cart Items</Typography>
                     {showCartItems()}

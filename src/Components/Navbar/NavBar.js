@@ -48,11 +48,11 @@ export const NavBar = () => {
                             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' }}} >
                                 <Typography component={Link} to="/" variant="h6" color="inherit" marginLeft={6}>
                                     
-                                    <img style={{ textDecoration: 'none' }} src={process.env.PUBLIC_URL + '/images/castle_logo.png'} alt="Stoker Real Estate" height="150vh" />
+                                    <img style={{ textDecoration: 'none' }} src={process.env.PUBLIC_URL + '/images/castle_logo.png'} alt="Stoker Real Estate" height="100vh" />
                                    
                                 </Typography>
                                 <Box>
-                                    <Typography variant='h4' fontFamily="Cinzel" fontWeight={700}>Stoker Real Estate</Typography>
+                                    <Typography variant='h5' fontFamily="Cinzel" fontWeight={700}>Stoker Real Estate</Typography>
                                 </Box>
                             </Box>
                             

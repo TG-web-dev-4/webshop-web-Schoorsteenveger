@@ -9,7 +9,7 @@ function Footer() {
 
     <Grid fullWidth sx={{ bgcolor: 'primary.dark'}} >
 
-      <Grid maxWidth="85vw" margin='0 auto' sx={{ display: "flex", justifyContent: "center", flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' }, bgcolor: 'primary.dark', alignContent: 'center', alignItems: 'center' }} height="auto" p={4}>
+      <Grid maxWidth="85vw" margin='0 auto' sx={{ display: "flex", justifyContent: "flex-end", flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' }, bgcolor: 'primary.dark', alignContent: 'center', alignItems: 'center' }} height="auto" p={4}>
         <Grid container >
           <Grid item xs={12} sm={6} md={12} lg={12}>
             <Typography variant='h5' fontFamily="Cinzel" gutterBottom>Castle Bran</Typography>

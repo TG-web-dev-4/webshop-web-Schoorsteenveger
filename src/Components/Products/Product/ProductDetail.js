@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router'
 import { Box } from '@mui/system';
 import { makeStyles } from '@mui/styles';
-//import products from '../../../Data/productData';
 import { AddShoppingCart, LocalHotelRounded, BathtubRounded } from '@mui/icons-material';
 import { Grid, Typography, Card, CardContent, CardMedia, Avatar, CardActions } from "@mui/material";
 import { addToCart } from '../../../redux/Shopping/shoppingActions';
