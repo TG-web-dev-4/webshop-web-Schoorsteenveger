@@ -33,7 +33,7 @@ const products = [
         "img": ["winchesterhouse.jpeg"],
         "price": 655000,
         "description": "According to legend, the rambling Victorian mansion that sits on a busy street in San Jose, California, is haunted by the ghosts of everyone killed by a Winchester rifle.",
-        "Rooms": 0,
+        "Rooms": 160,
         "Bathrooms": 13,
         "Category": ["Demons"],
         // "Available": True

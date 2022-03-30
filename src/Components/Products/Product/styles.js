@@ -2,7 +2,7 @@ import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
     root: {
-        maxWidth: '90%',
+        maxWidth: '100',
         margin:' 0 auto',
     },
     media: {
