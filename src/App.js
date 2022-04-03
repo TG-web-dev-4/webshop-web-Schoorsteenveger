@@ -19,20 +19,20 @@ import ProductDetail from './Components/Products/Product/ProductDetail'
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#9e9e9e',
-      light: '#cfcfcf',
-      dark: '#707070'
+      main: '#fff9c4',
+      light: '#fffff7',
+      dark: '#cbc693'
     },
     secondary: {
-      main: '#311b92',
-      light: '#6746c3',
-      dark: "#000063",
+      main: '#37474f',
+      light: '#62727b',
+      dark: "#102027",
     },
     typography: {
       fontFamily: ['Cinzel', 'serif', 'Taviraj', 'serif'].join(','),
       fontWeightRegular: '500',
       fontSize: '18',
-      color: '#bbdefb'
+      color: '#ffab40'
     },
     components: {
       MuiCssBaseline: {

@@ -21,9 +21,9 @@ const ProductList = () => {
          <Typography variant="h3" fontFamily="primary" color="secondary.dark" textAlign="center" >Choose your forever home</Typography>
        </Grid>
         
-        <Grid fullWidth marginBottom="3em" sx={{ display: 'flex', justifyContent: "center" }} container spacing={6}>
+        <Grid container maxWidth='75vmax' margin="0 auto" sx={{ display: 'flex', justifyContent: "center" }} spacing={4}>
           {products.map(product => (
-            <Grid key={v4()} item xs={12} sm={6} md={6} lg={3}>       
+            <Grid item key={v4()} xs={12} sm={6} md={4} lg={3}>       
              <ProductCard key={product.id} product={product}  />             
             </Grid>
               ))}

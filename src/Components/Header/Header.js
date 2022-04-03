@@ -37,14 +37,14 @@ function Header() {
   return (
 
     <>
-      <Grid container fullWidth sx={{ flexWrap: "nowrap", flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' }, alignItems: 'center', bgcolor: 'secondary.light', marginY: '-4rem' }}>
-        <Grid container item order={2} sx={{ height: "50vh", background: 'url(./images/home.jpg)', backgroundSize: "cover", backgroundRepeat: "no-repeat", justifyContent: "center", alignItems: "flex-end"}} >
-            <Typography variant="h3" fontFamily="primary" color="primary.light" pl= "1em" gutterBottom>Find the house of your dreams</Typography>
+      <Grid container maxWidth="100vmax" sx={{ flexWrap: "nowrap", flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' }, alignItems: 'center', bgcolor: 'secondary.light'}}>
+        <Grid container  order={2} sx={{ height: "55vh", background: 'url(./images/home.jpg)', backgroundSize: "cover", backgroundRepeat: "no-repeat", justifyContent: "center", alignItems: "flex-end"}} >
+            <Typography variant="h3" fontFamily="primary" color="primary" pl= "1em" gutterBottom>Find the house of your dreams</Typography>
         </Grid>
 
         <Grid container item height="100%" sx={{
           alignItems: "center", bgcolor: 'secondary.light', justifyContent: 'center' }} >
-          <Grid item sx={12} px={2} py={4} m="2rem" height= "100%" width="70%" >
+          <Grid item sx={12} px={2} py={4} m="2rem">
             <Box>
               <Typography variant="h3" fontFamily="primary" textAlign={"left"}sx={{ textTransform: 'capitalize', mb: 6 }}  >
                 Buying made simple

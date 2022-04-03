@@ -18,21 +18,21 @@ const Product = ({ product }) => {
                 <CardMedia className={classes.media} image={process.env.PUBLIC_URL + `/images/${product.img}`} title={product.name} color="textSecondary" />
                     <CardContent>
                         <div className={classes.CardContent}>
-                            <Typography variant ="h5" gutterBottom color="textSecondary">
+                            <Typography variant ="h5" gutterBottom color="inherit">
                                 {product.name}
                             </Typography>
-                            <Typography variant ="h5" color="textSecondary">$
+                            <Typography variant ="h5" color="inherit">$
                                 {product.price}
                             </Typography>
                         </div>
-                        <Typography variant="body2" color="textSecondary">{product.description}
+                        <Typography variant="body2" color="inherit">{product.description}
                         </Typography>
                     </CardContent>
             </CardActionArea>
             
             <CardActions disableSpacing className={classes.CardActions}>
-                <Button component={Link} to={`/products/${product.id}`}>Read more</Button>  
-                <IconButton onClick={() => dispatch(addToCart(product.id))} aria-label="Add to Cart">
+                <Button component={Link} color="inherit" to={`/products/${product.id}`}>Read more</Button>  
+                <IconButton color="inherit" onClick={() => dispatch(addToCart(product.id))} aria-label="Add to Cart">
                     <AddShoppingCart />                    
                 </IconButton>    
             </CardActions>

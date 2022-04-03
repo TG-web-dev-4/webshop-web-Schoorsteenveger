@@ -4,7 +4,7 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/materia
 
 const DrawerComponent = ({ openDrawer, setOpenDrawer }) => {
     return (
-        <Drawer anchor="left" open={openDrawer} sx={{ bgcolor: '#f7f7f5' }}>
+        <Drawer anchor="left" open={openDrawer} sx={{ bgcolor: 'primary' }}>
             <List>
                 <ListItem divider button onClick={() => setOpenDrawer(true)}>
                     <ListItemIcon>
@@ -34,6 +34,11 @@ const DrawerComponent = ({ openDrawer, setOpenDrawer }) => {
                 <ListItem component={Link} to="/Login" style={{ textDecoration: 'none' }} divider button onClick={() => setOpenDrawer(false)}>
                     <ListItemIcon>
                         <ListItemText>Login</ListItemText>
+                    </ListItemIcon>
+                </ListItem>
+                <ListItem component={Link} to="/Cart" style={{ textDecoration: 'none' }} divider button onClick={() => setOpenDrawer(false)}>
+                    <ListItemIcon>
+                        <ListItemText>Shop</ListItemText>
                     </ListItemIcon>
                 </ListItem>
             </List>

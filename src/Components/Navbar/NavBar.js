@@ -39,7 +39,7 @@ export const NavBar = () => {
 
             <Box mt={25}>
 
-                <AppBar position='fixed' color="primary">
+                <AppBar position='fixed' color="secondary">
 
                     <Toolbar>
 
@@ -83,7 +83,7 @@ export const NavBar = () => {
                                 <Typography to="/Contact" variant="h5" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Contact</Typography>
 
                                 <Box>
-                                    <Button component={Link} to="/Login" variant='contained' color="secondary" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Login</Button>
+                                    <Button component={Link} to="/Login" variant='contained' color="primary" sx={{ marginRight: "2em", cursor: "Pointer", color: "primary" }}>Login</Button>
                                 </Box>
                             </Box>)}
 

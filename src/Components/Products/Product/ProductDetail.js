@@ -96,7 +96,7 @@ function ProductDetail() {
                 </Grid>
 
                 <Grid item xs={12} md={12} sx={{ backgroundColor: '#efebe9' }}>
-                   <TabPanel />
+                    <TabPanel />
                 </Grid>
                 <Grid item xs={12} md={12} sx={{ backgroundColor: 'blue' }}>
                 </Grid>
