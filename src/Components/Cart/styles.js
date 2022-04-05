@@ -1,8 +1,12 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
-    cardMedia: {
-        height: 0,
+    root: {
+        maxWidth: '100',
+        height: 'auto'
+    },
+    CardMedia: {
+        height: 100,
         paddingTop: '56.25%',
     },
     CardContent: {
@@ -11,7 +15,7 @@ export default makeStyles(() => ({
         fontSize: '1.7rem',
     },
     CardActions: {
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
     },
     buttons: {
         display: 'flex',

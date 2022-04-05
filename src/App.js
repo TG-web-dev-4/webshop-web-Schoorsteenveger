@@ -14,6 +14,7 @@ import DrawerComponent from "./Components/Navbar/DrawerComponent";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import ProductDetail from './Components/Products/Product/ProductDetail'
+import ProductPage from "./Pages/ProductPage";
 
 
 const theme = createTheme({
@@ -72,6 +73,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Abouts" element={<AboutUs />} />
             <Route path="/Products" element={<ProductList />} />
+            <Route path="/ProductPage" element={<ProductPage />} />
             <Route path="/Products/:id" element={<ProductDetail />} />
             <Route path="/Cart" element={<ShoppingBag />} />
             <Route exact path="/Login" element={<Login />} />

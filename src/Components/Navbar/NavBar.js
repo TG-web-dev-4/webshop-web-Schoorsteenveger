@@ -43,7 +43,7 @@ export const NavBar = () => {
 
                     <Toolbar>
 
-                        <Box sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row'} ,justifyContent: "space-between", alignContent: "center", alignItems: "center", width: "100%" }} py={3} component="div">
+                        <Box sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'row', md: 'column', lg: 'row'} ,justifyContent: "space-between", alignContent: "center", alignItems: "center", width: "100%" }} py={3} component="div">
                             
                             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' }}} >
                                 <Typography component={Link} to="/" variant="h6" color="inherit" marginLeft={6}>
@@ -52,7 +52,7 @@ export const NavBar = () => {
                                    
                                 </Typography>
                                 <Box>
-                                    <Typography variant='h5' fontFamily="Cinzel" fontWeight={700}>Stoker Real Estate</Typography>
+                                    <Typography variant='h5' fontSize={'1.2vmax'} fontFamily="Cinzel" fontWeight={700}>Stoker Real Estate</Typography>
                                 </Box>
                             </Box>
                             
@@ -98,8 +98,8 @@ export const NavBar = () => {
                         ) : (
 
                             <IconButton component={Link} to="/Cart" aria-label='Show cart items' sx={{ backgroundColor: 'white', color: 'primary' }}>
-                                <Badge badgeContent={totalItemsWithReduce <= 0 ? 0 : totalItemsWithReduce} color="secondary">
-                                    <ShoppingCart sx={{ fontSize: 30 }} />
+                                <Badge badgeContent={totalItemsWithReduce <= 0 ? 0 : totalItemsWithReduce} color="primary">
+                                    <ShoppingCart color='secondary' sx={{ fontSize: 30 }} />
                                 </Badge>
                             </IconButton>
 

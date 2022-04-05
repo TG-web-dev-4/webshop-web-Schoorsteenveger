@@ -15,7 +15,7 @@ export const CartItem = ({ cartItem }) => {
         <>
             <Box marginBottom={4}>
                 <Card className={classes.root}>
-                    <CardMedia className={classes.media} component='img' sx={{ width: 500 }} src={process.env.PUBLIC_URL + `../images/${cartItem.img}`} alt={cartItem.name} />
+                    <CardMedia className={classes.media} component='img' sx={{ width: 500 }} image={process.env.PUBLIC_URL + `../images/${cartItem.img}`} alt={cartItem.name} />
                     <CardContent>
                         <Typography className={classes.CardContent} variant="h4" gutterBottom>{cartItem.name}</Typography>
                         <Typography className={classes.CardContent}>${cartItem.price}</Typography>
