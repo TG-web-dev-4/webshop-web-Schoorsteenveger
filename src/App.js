@@ -15,6 +15,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import ProductDetail from './Components/Products/Product/ProductDetail'
 import ProductPage from "./Pages/ProductPage";
+import Layout from "./Components/Layout";
 
 
 const theme = createTheme({
@@ -65,6 +66,9 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <Layout>
+
+        </Layout>
         <CssBaseline />
         <Router>
           <DrawerComponent />

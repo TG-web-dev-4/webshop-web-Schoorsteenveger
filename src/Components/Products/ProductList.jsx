@@ -23,7 +23,7 @@ const ProductList = () => {
   return (
     
     <>
-      <Banner />
+      {/* <Banner /> */}
         <Grid sx={{ display: 'flex', justifyContent: "center", alignItems: "center", backgroundColor:"secondary", height: "25vh" }}>
          <Typography variant="h3" fontFamily="primary" color="secondary.dark" textAlign="center" >Choose your forever home</Typography>
        </Grid>

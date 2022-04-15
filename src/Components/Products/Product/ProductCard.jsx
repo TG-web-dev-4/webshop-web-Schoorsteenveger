@@ -6,16 +6,19 @@ import useStyles from './styles';
 // import Products from "../ProductList";
 import {useDispatch } from "react-redux";
 import { addToCart } from '../../../redux/Shopping/shoppingActions';
+import TextTruncate from "react-text-truncate";
+
 
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch()
     const classes = useStyles();
+ 
   
     return (
-        <Card className={classes.root}>
+        <Card className={classes.Card}>
             <CardActionArea component={Link} to={`/products/${product.id}`}>
-                <CardMedia className={classes.media} image={process.env.PUBLIC_URL + `/images/${product.img}`} title={product.name} color="textSecondary" />
+                <CardMedia className={classes.Media} image={process.env.PUBLIC_URL + `/images/${product.img}`} title={product.name} color="textSecondary" />
                     <CardContent>
                         <Box className={classes.CardContent} >
                             <Typography variant ="h5" gutterBottom color="inherit">
@@ -24,9 +27,11 @@ const ProductCard = ({ product }) => {
                             <Typography gutterBottom variant ="h5" color="inherit">$
                                 {product.price}
                             </Typography>
-                        </Box>
+                    </Box>
+                    
                     <Box className={classes.CardDescription} >
-                        <Typography type="text" variant="body2" color="inherit" component='p'>{product.description}
+                        <Typography  >
+                            <TextTruncate line={1} variant="body2" color="inherit" text={product.story}/>                       
                         </Typography>                     
                     </Box>
                         

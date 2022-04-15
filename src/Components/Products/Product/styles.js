@@ -1,21 +1,19 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
-    root: {
-    //    minWidth: '100',
-    //     height: 'auto'
-    },
-    media: {
-        height: 100,
+    Media: {
         paddingTop: '56.25%',
     },
     Card: {
-      transition: 'transform 200ms ease in',
+        transition: 'transform 200ms ease in',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column'
+
     },
     CardActions: {
         display: 'flex',
         justifyContent: 'space-between',
-        // backgroundColor: 'pink'
     },
     CardContent: {
         display: 'flex',
@@ -23,15 +21,11 @@ export default makeStyles(() => ({
         flexDirection: 'column',
     },
     CardDescription: {
-        lineClamp: 3,
-        textOverflow: 'ellipsis',
+        // lineClamp: 2,
+        // textOverflow: 'ellipsis',
+        wordWrap: 'break-word',
         whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        paddingRigth: '5px',
-        '& p': {
-            wordBreak: 'break-all'
-        }
+        
     }
     
-
 }));

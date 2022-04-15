@@ -38,7 +38,7 @@ const TabPanel = () => {
         <Panel value={index} index={0} >
           <Box padding="15px">
             <Typography variant='h5'>Full Description</Typography>
-            {contentDetail[0].description}
+            {contentDetail[0].story}
           </Box>
          
         </Panel>

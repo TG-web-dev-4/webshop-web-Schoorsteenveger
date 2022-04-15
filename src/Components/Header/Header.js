@@ -5,23 +5,23 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
   underline: {
-    width: '19%',
-    transition: 'width 0.3s ease 0s, left 0.3s ease 0s',
+    width: '20%',
+    // transition: 'width 0.3s ease 0s, left 0.3s ease 0s',
     height: '2px',
     top: '1px',
     bottom: '0',
     backgroundColor: 'black',
     position: 'relative',
     cursor: 'pointer',
-    '&::hover:before': {
-      content: "",
+    '&:hover': {
       position: 'absolute',
-      width: '0%',
+      color:'pink',
+      textDecoration: 'underline #55555',
       height: '2px',
       top: '5px',
       left: '0',
       transition: 'width 0.3s ease 0s, left 0.3s ease 0s', 
-      backgroundColor: 'white'
+      // backgroundColor: 'white'
     }
   }
 })
@@ -56,8 +56,8 @@ function Header() {
               </Typography>
             </Box>
             <Box pt={2} order={1}>
-              <Typography classname={classes.underline} component={Link} to="/Products" style={{ textDecoration: 'none', color: 'black' }} variant='h6' fontFamily="Cinzel" sx={{ mt: 4 }}>Search for a Home</Typography>
-              <Box component='span' sx={{ display: 'block' }} className={classes.underline}>koekje</Box>
+              <Typography component={Link} to="/Products" style={{ textDecoration: 'none', color: 'black' }} variant='h6' fontFamily="Cinzel" sx={{ mt: 4 }}>Search for a Home</Typography>
+              <Box component='span' sx={{ display: 'block' }} className={classes.underline}></Box>
             </Box>
 
           </Grid>
