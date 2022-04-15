@@ -37,7 +37,7 @@ export const NavBar = () => {
     return (
         <>
 
-            <Box mt={25}>
+            <Box mb="11rem">
 
                 <AppBar position='fixed' color="secondary">
 

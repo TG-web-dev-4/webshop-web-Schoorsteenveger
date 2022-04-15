@@ -6,8 +6,8 @@ import { Tabs, Tab, AppBar, Typography, Box } from '@mui/material'
 const TabPanel = () => {
   const [index, setIndex] = useState(0)
 
-  const onTabClicked = (event, index) => {
-    setIndex(index)
+  const onTabClicked = (event, newIndex) => {
+    setIndex(newIndex)
 
   }
 
@@ -27,30 +27,30 @@ const TabPanel = () => {
   return (
     <>
       <div>
-        <AppBar position='static'>
-          <Tabs variant="fullWidth" value={index} onChange={onTabClicked}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', bgcolor: 'background.paper' }}>
+          <Tabs variant="fullWidth" value={index} onChange={onTabClicked} textColor="secondary"
+            indicatorColor="secondary">
             <Tab label="Description" />
             <Tab label="Gallery" />
             <Tab label="Nearby" />
           </Tabs>
-        </AppBar>
+        </Box>
 
         <Panel value={index} index={0} >
           <Box padding="15px">
             <Typography variant='h5'>Full Description</Typography>
             {contentDetail[0].story}
           </Box>
-         
         </Panel>
         <Panel value={index} index={1}>
           <Box padding="15px">
-          <Typography variant='h5'>Gallery</Typography>
-          Second tab
+            <Typography color='primary' variant='h5'>Gallery</Typography>
+            Second tab
           </Box>
         </Panel>
         <Panel value={index} index={2}>
           <Box padding="15px">
-          <Typography variant='h5'>Nearby</Typography>
+            <Typography variant='h5'>Nearby</Typography>
             Third tab
           </Box>
         </Panel>

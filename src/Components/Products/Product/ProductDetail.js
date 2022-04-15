@@ -58,7 +58,7 @@ function ProductDetail() {
                 </Grid>
                 <Grid item sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} xs={12} sm={12} md={6} lg={6} >
                     <Card className={classes.root}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left'}}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', flexGrow: 1}}>
                             <CardContent>
                                 <Typography component='div' fontFamily="Cinzel" variant='h5' gutterBottom >
                                     {productDetail[0].name}
